@@ -5,17 +5,25 @@
 }
 
 .choice__container {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   align-content: flex-start;
   width: 1440px;
+  height: 100%;
   margin: 0 auto;
   padding-top: 0;
   padding-left: 135px;
   padding-right: 135px;
-  overflow: hidden;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 
   @media (max-width: $large-width) {
     width: 100%;
@@ -92,17 +100,13 @@
 .choice__list {
   display: grid;
   grid-template-columns: min-content min-content min-content;
+  align-content: flex-start;
   width: 100%;
-  height: 35%;
+  height: 100%;
   gap: 32px 24px;
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: 0;
-  }
 
   @media (max-width: 1350px) {
     justify-content: center;
@@ -115,7 +119,6 @@
 
   @media (max-width: $tablet-width) {
     gap: 16px;
-    height: 20%;
   }
 }
 

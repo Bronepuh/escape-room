@@ -52,31 +52,31 @@
 
   // routes
 
-  var resetRoutes = function () {
-    pageBody.classList.remove('page-body--main');
-    pageBody.classList.remove('page-body--choice');
-    pageBody.classList.remove('page-body--promo');
-  }
+  // var resetRoutes = function () {
+  //   pageBody.classList.remove('page-body--main');
+  //   pageBody.classList.remove('page-body--choice');
+  //   pageBody.classList.remove('page-body--promo');
+  // }
 
-  headerLogo.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    resetRoutes();
-    pageBody.classList.add('page-body--main');
-    window.location = "/";
-  })
+  // headerLogo.addEventListener('click', function (evt) {
+  //   evt.preventDefault();
+  //   resetRoutes();
+  //   pageBody.classList.add('page-body--main');
+  //   window.location = "/";
+  // })
 
-  descriptionButton.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    resetRoutes();
-    pageBody.classList.add('page-body--choice');
-  })
+  // descriptionButton.addEventListener('click', function (evt) {
+  //   evt.preventDefault();
+  //   resetRoutes();
+  //   pageBody.classList.add('page-body--choice');
+  // })
 
-  choiceItems.forEach(el => {
-    el.addEventListener('click', function () {
-      resetRoutes();
-      pageBody.classList.add('page-body--promo');
-    })
-  })
+  // choiceItems.forEach(el => {
+  //   el.addEventListener('click', function () {
+  //     resetRoutes();
+  //     pageBody.classList.add('page-body--promo');
+  //   })
+  // })
 
   // calendar
 
