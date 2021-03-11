@@ -1,0 +1,117 @@
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+  width: 1440px;
+  margin: 0 auto;
+  padding-top: 38px;
+  padding-bottom: 23px;
+  padding-left: 135px;
+  padding-right: 32px;
+
+  @media (max-width: $large-width) {
+    width: 100%;
+  }
+
+  @media (max-width: $tablet-width) {
+    align-content: flex-end;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 65px;
+  }
+}
+
+.description h2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 70px;
+  display: flex;
+  align-items: center;
+  color: $basic-white;
+
+  @media (max-width: $tablet-width) {
+    justify-content: center;
+    margin-bottom: 33px;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  span {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    letter-spacing: -0.7px;
+
+    @media (max-width: $tablet-width) {
+      justify-content: center;
+    }
+  }
+}
+
+.description p {
+  display: flex;
+  flex-wrap: wrap;
+  width: 468px;
+  margin-bottom: 67px;
+
+  @media (max-width: 469px) {
+    width: 100%;
+  }
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.description__button {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media (max-width: $tablet-width) {
+    justify-content: center;
+  }
+}
+
+.description__button a{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  height: 65px;
+  border: none;
+  border-radius: 65px;
+  color: $basic-white;
+  background-color: $darck-orange;
+  cursor: pointer;
+
+  @media (max-width: $tablet-width) {
+    width: 185px;
+    height: 47px;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 47px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $light-orange;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}

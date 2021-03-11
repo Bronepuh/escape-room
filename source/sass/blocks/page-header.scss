@@ -1,0 +1,157 @@
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  z-index: 2;
+
+  &--nojs,
+  &--opened {
+    @media (max-width: $tablet-width) {
+      .page-header__container {
+        position: absolute;
+        background-image: linear-gradient(170.74deg, #633C0F -68.98%, #24150E 75.12%, #1A140D 132.97%);
+        overflow: hidden;
+      }
+
+      .navigation {
+        display: flex;
+      }
+
+      .contacts {
+        position: relative;
+        display: flex;
+
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $basic-white;
+          opacity: 0.16;
+        }
+      }
+
+      .page-header__toggle {
+        &::after {
+          top: 4px;
+          right: 2px;
+          width: 16px;
+          height: 16px;
+          background-image: url("../img/icon-close.svg");
+        }
+
+        &:hover,
+        &:focus {
+          &::after {
+            background-image: url("../img/icon-close-hover.svg");
+          }
+        }
+      }
+    }
+  }
+
+  &--closed {
+    @media (max-width: $tablet-width) {
+      .navigation {
+        display: none;
+      }
+
+      .contacts {
+        display: none;
+      }
+    }
+  }
+}
+
+.page-header__container {
+  display: flex;
+  align-items: center;
+  width: 1440px;
+  margin: 0 auto;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  @media (max-width: $large-width) {
+    width: 100%;
+  }
+
+  @media (max-width: $tablet-width) {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.page-header__logo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 134px;
+  margin-right: 32px;
+
+  @media (max-width: $tablet-width) {
+    width: 96px;
+  }
+}
+
+.page-header__toggle {
+  display: none;
+
+  @media (max-width: $tablet-width) {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    margin-left: auto;
+    padding: 0;
+    padding-top: 5px;
+    padding-right: 28px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    font-feature-settings: 'pnum'on, 'lnum'on;
+    text-transform: uppercase;
+    color: $basic-white-2;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 6px;
+      right: 1px;
+      width: 20px;
+      height: 16px;
+      background-image: url("../img/icon-burger.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &:hover,
+    &:focus {
+      border: none;
+      outline: none;
+      color: $basic-hover;
+
+      &::after {
+        background-image: url("../img/icon-burger-hover.svg");
+      }
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}

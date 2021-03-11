@@ -1,0 +1,246 @@
+.swipe {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 39px;
+  overflow: hidden;
+}
+
+.swipe__list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.swipe__item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 10px;
+  padding-left: 85px;
+  padding-right: 40px;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 6px;
+    left: 1px;
+    width: 26px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: $basic-white;
+    opacity: 0.5;
+  }
+
+  &:nth-child(1) {
+    padding-left: 39px;
+
+    &::before {
+      background-image: url("../img/icon-quests.svg");
+    }
+
+    &:hover::before {
+      background-image: url("../img/icon-quests-hover.svg");
+    }
+
+    @media (max-width: $tablet-width) {
+      padding-left: 32px;
+      padding-right: 18px;
+      &::before {
+        height: 24px;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    padding-left: 88px;
+
+    &::before {
+      top: 5px;
+      left: 41px;
+      width: 36px;
+      height: 30px;
+      background-image: url("../img/icon-adventures.svg");
+    }
+
+    &:hover::before {
+      background-image: url("../img/icon-adventures-hover.svg");
+    }
+
+    @media (max-width: $tablet-width) {
+      padding-right: 18px;
+      padding-left: 60px;
+      &::before {
+        left: 20px;
+        height: 24px;
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    padding-left: 82px;
+
+    &::before {
+      left: 41px;
+      width: 30px;
+      height: 30px;
+      background-image: url("../img/icon-horrors.svg");
+    }
+
+    &:hover::before {
+      background-image: url("../img/icon-horrors-hover.svg");
+    }
+
+    @media (max-width: $tablet-width) {
+      padding-right: 18px;
+      padding-left: 60px;
+      &::before {
+        left: 20px;
+        height: 24px;
+      }
+    }
+  }
+
+  &:nth-child(4) {
+    padding-left: 82px;
+
+    &::before {
+      left: 39px;
+      width: 30px;
+      height: 30px;
+      background-image: url("../img/icon-mystic.svg");
+    }
+
+    &:hover::before {
+      background-image: url("../img/icon-mystic-hover.svg");
+    }
+
+    @media (max-width: $tablet-width) {
+      padding-right: 18px;
+      padding-left: 60px;
+      &::before {
+        left: 20px;
+        height: 24px;
+      }
+    }
+  }
+
+  &:nth-child(5) {
+    padding-left: 90px;
+
+    &::before {
+      left: 39px;
+      width: 40px;
+      height: 30px;
+      background-image: url("../img/icon-detective.svg");
+    }
+
+    &:hover::before {
+      background-image: url("../img/icon-detective-hover.svg");
+    }
+
+    @media (max-width: $tablet-width) {
+      padding-right: 18px;
+      padding-left: 60px;
+      &::before {
+        left: 20px;
+        height: 24px;
+      }
+    }
+  }
+
+  &:nth-child(6) {
+    padding-left: 80px;
+
+    &::before {
+      left: 39px;
+      width: 30px;
+      height: 30px;
+      background-image: url("../img/icon-science.svg");
+    }
+
+    &:hover::before {
+      background-image: url("../img/icon-science-hover.svg");
+    }
+
+    @media (max-width: $tablet-width) {
+      padding-right: 18px;
+      padding-left: 60px;
+      &::before {
+        left: 20px;
+        height: 24px;
+      }
+    }
+  }
+
+  &:last-child {
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  &--active {
+    a::after {
+      position: absolute;
+      content: "";
+      top: 22px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $basic-hover;
+
+      @media (max-width: $tablet-width) {
+        top: 20px;
+      }
+    }
+  }
+}
+
+.swipe__item:hover a {
+  color: $basic-hover;
+}
+
+.swipe__item a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: $text-white;
+  text-decoration: none;
+  white-space: nowrap;
+}

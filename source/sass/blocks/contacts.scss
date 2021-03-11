@@ -1,0 +1,104 @@
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  width: 378px;
+
+  @media (max-width: 830px) {
+    width: 300px;
+  }
+
+  @media (max-width: $tablet-width) {
+    order: 2;
+    width: 100%;
+    padding-top: 37px;
+    padding-bottom: 16px;
+    display: none;
+  }
+}
+
+.contacts__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-right: 8px;
+  list-style: none;
+
+  @media (max-width: $tablet-width) {
+    justify-content: center;
+    padding-right: 0;
+  }
+}
+
+.contacts__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 23px;
+
+  @media (max-width: $tablet-width) {
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 24px;
+  }
+}
+
+.contacts__link {
+  display: flex;
+  flex-wrap: wrap;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  font-feature-settings: 'pnum'on, 'lnum'on;
+  color: $basic-white-2;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $basic-hover;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &--location {
+    position: relative;
+    padding-left: 24px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: $basic-hover;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -4px;
+      left: 0;
+      width: 16px;
+      height: 21px;
+      background-image: url("../img/icon-pipka.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &:hover {
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: -4px;
+        right: 0;
+        width: calc(100% - 24px);
+        height: 1px;
+        border-bottom: 1px dashed $basic-hover;
+      }
+    }
+  }
+}

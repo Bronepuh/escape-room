@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Escape room">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Escape room</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="page-body page-body--form">
+  <header class="page-header page-header--nojs">
+    <div class="page-header__container">
+      <a class="page-header__logo">
+        <span class="visually-hidden">Логотип</span>
+        <svg role="img" width="134" height="50">
+          <use xlink:href="img/sprite_auto.svg#icon-logo-desktop"></use>
+        </svg>
+      </a>
+      <button class="page-header__toggle">Меню</button>
+      <nav class="page-header__navigation navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item navigation__item--active">
+            <a href="choice.html">КВЕСТЫ</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#">НОВИЧКАМ</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#">ОТЗЫВЫ</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#">АКЦИИ</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#">КОНТАКТЫ</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="page-header__contacts contacts">
+        <ul class="contacts__list">
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--location" href="#">НОВОСИБИРСК</a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link" href="tel:83832840160">8 (383) 284 01 60</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main class="page-main">
+    <h1 class="visually-hidden">Escape room</h1>
+
+    <section class="page-main__description description">
+      <h2><span>Лучшие квесты</span>в Новосибирске</h2>
+      <p>Надоело проводить свободное время лёжа на диване? Игровые площадки questroom на целый час погружают вас в мир
+        незабываемых авантюр. Ищите подсказки, решайте головоломки и находите выход из комнаты!</p>
+      <div class="description__button">
+        <a href="choice.html" class="description__button">ВЫБРАТЬ КВЕСТ</a>
+      </div>
+    </section>
+
+    <section class="page-main__choice choice">
+      <div class="choice__container">
+        <span class="choice__subtitle">квесты в Новосибирске</span>
+        <h2 class="choice__title">Выберите тематику</h2>
+        <div class="choice__swipe swipe">
+          <ul class="swipe__list">
+            <li class="swipe__item swipe__item--active">
+              <a href="#">Все квесты</a>
+            </li>
+            <li class="swipe__item">
+              <a href="#">Приключения</a>
+            </li>
+            <li class="swipe__item">
+              <a href="#">Ужасы</a>
+            </li>
+            <li class="swipe__item">
+              <a href="#">Мистика</a>
+            </li>
+            <li class="swipe__item">
+              <a href="#">Детектив</a>
+            </li>
+            <li class="swipe__item">
+              <a href="#">Sci-fi</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="choice__list">
+          <!-- Склеп -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge card__budge--active">Хит</div>
+                <h2>Склеп</h2>
+                <span>пр. Ленина, 37</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">2–5 чел</li>
+                  <li class="card__item card__item--puzzle">сложный</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-1@1x.webp, img/card-1@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-1@1x.png" srcset="img/card-1@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Маньяк -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge card__budge--active">Хит</div>
+                <h2>Маньяк</h2>
+                <span>Верхнетецкая, 32</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">3–6 чел</li>
+                  <li class="card__item card__item--puzzle">средний</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-2@1x.webp, img/card-2@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-2@1x.png" srcset="img/card-2@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Ритуал -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>Ритуал</h2>
+                <span>пр. Ленина, 37</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">3–5 чел</li>
+                  <li class="card__item card__item--puzzle">сложный</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-3@1x.webp, img/card-3@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-3@1x.png" srcset="img/card-3@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- История призраков -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>История призраков</h2>
+                <span>Новослободская, 2а</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">5–6 чел</li>
+                  <li class="card__item card__item--puzzle">легкий</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-4@1x.webp, img/card-4@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-4@1x.png" srcset="img/card-4@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Тайны старого особняка -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>Тайны старого особняка</h2>
+                <span>пр. Ленина, 37</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">2–5 чел</li>
+                  <li class="card__item card__item--puzzle">легкий</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-5@1x.webp, img/card-5@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-5@1x.png" srcset="img/card-5@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Хижина в лесуХижина в лесу -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>Хижина в лесу</h2>
+                <span>Верхнетецкая, 32</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">4–7 чел</li>
+                  <li class="card__item card__item--puzzle">средний</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-6@1x.webp, img/card-6@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-6@1x.png" srcset="img/card-6@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Фатальный эксперимент -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>Фатальный эксперимент</h2>
+                <span>Верхнетецкая, 32</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">5–8 чел</li>
+                  <li class="card__item card__item--puzzle">сложный</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-7@1x.webp, img/card-7@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-7@1x.png" srcset="img/card-7@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Метро 2033 -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>Метро 2033</h2>
+                <span>Новослободская, 2а</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">6–8 чел</li>
+                  <li class="card__item card__item--puzzle">средний</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-8@1x.webp, img/card-8@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-8@1x.png" srcset="img/card-8@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Старый чердак -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>Старый чердак</h2>
+                <span>Новослободская, 2а</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">2–3 чел</li>
+                  <li class="card__item card__item--puzzle">легкий</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-9@1x.webp, img/card-9@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-9@1x.png" srcset="img/card-9@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Последний рубеж -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>Последний рубеж</h2>
+                <span>Верхнетецкая, 32</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">4–7 чел</li>
+                  <li class="card__item card__item--puzzle">средний</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-10@1x.webp, img/card-10@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-10@1x.png" srcset="img/card-10@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+          <!-- Марс-2056 -->
+          <li class="choice__item">
+            <a href="promo.html" class="choice__card card">
+              <div class="card__description">
+                <div class="card__budge">Хит</div>
+                <h2>Марс-2056</h2>
+                <span>пр. Ленина, 37</span>
+                <ul class="card__list">
+                  <li class="card__item card__item--person">2–4 чел</li>
+                  <li class="card__item card__item--puzzle">легкий</li>
+                </ul>
+              </div>
+              <picture>
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <source type="image/webp" srcset="img/card-11@1x.webp, img/card-11@2x.webp 2x">
+                <!-- 1x: 344x232; 2x: 688x464 -->
+                <img src="img/card-11@1x.png" srcset="img/card-11@2x.png 2x" alt="картинка" width="344" height="232">
+              </picture>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-promo promo">
+      <div class="promo__container">
+        <a class="promo__link" href="choice.html">ВСЕ КВЕСТЫ</a>
+        <span class="promo__subtitle">хоррор, триллер</span>
+        <h2 class="promo__title">МАНЬЯК</h2>
+        <ul class="promo__list">
+          <li class="promo__item promo__item--clock">
+            <span>60 мин</span>
+          </li>
+          <li class="promo__item promo__item--person">
+            <span>3–4 чел</span>
+          </li>
+          <li class="promo__item promo__item--difficult">
+            <span>средняя сложность</span>
+          </li>
+        </ul>
+        <p class="promo__description">
+          В комнате с приглушённым светом несколько человек, незнакомых друг с другом, приходят в себя. Никто не помнит,
+          что произошло прошлым вечером. Руки и ноги связаным, но одному из вас получилось освободиться. На стене висит
+          пугающий таймер и запущен отстёт <br> 60 минут. Сможете ли вы разобраться в стрессовой ситуации, помочь
+          другим, разобраться что произошло и выбраться из комнаты?
+        </p>
+        <div class="promo__button">
+          <a href="#">ЗАБРОНИРОВАТЬ</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-form form">
+      <div class="form__title-container">
+        <span class="form__subtitle">выбранный квест</span>
+        <h2 class="form__title">МАНЬЯК</h2>
+      </div>
+      <div class="form__result"></div>
+      <form class="form__body" action="https://echo.htmlacademy.ru" method="GET">
+        <div class="form__date date" data-pmu-format="Y-m-d" tabindex="0">Выберите дату</div>
+
+        <label for="date"></label>
+        <input type="hidden" name="date" id="date">
+
+        <div class="form__time">
+          <ul class="form__samplpes">
+            <li class="form__sample">— сводобно</li>
+            <li class="form__sample">— занято</li>
+            <li class="form__sample">— выбрано вами</li>
+          </ul>
+        </div>
+
+        <div class="form__button">
+          <button type="submit">Отправить</button>
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+  <footer class="page-footer page-footer--nojs">
+    <div class="page-footer__container">
+      <div class="page-footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="#" class="social__link social__link--insta">Инстаграмм</a>
+          </li>
+          <li class="social__item">
+            <a href="#" class="social__link social__link--vk">Вконтакте</a>
+          </li>
+        </ul>
+      </div>
+      <button type="button" class="page-footer__question">Задать вопрос</button>
+    </div>
+  </footer>
+
+  <div class="page-body__oberlay overlay"></div>
+
+  <script src="js/vendor/pickmeau.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
