@@ -7,8 +7,10 @@
   &--nojs,
   &--opened {
     @media (max-width: $tablet-width) {
+      position: absolute;
+      height: 100%;
+
       .page-header__container {
-        position: absolute;
         background-image: linear-gradient(170.74deg, #633C0F -68.98%, #24150E 75.12%, #1A140D 132.97%);
         overflow: hidden;
       }

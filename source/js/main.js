@@ -10,7 +10,6 @@
   var menuItems = document.querySelectorAll('.navigation__item');
   var choiceItems = document.querySelectorAll('.choice__item');
 
-
   if (pageHeader) {
     pageHeader.classList.remove('page-header--nojs');
     pageFooter.classList.remove('page-footer--nojs');
@@ -78,7 +77,24 @@
   //   })
   // })
 
-  // calendar
+
+
+  // calendar & form
+
+  var dateResult = document.querySelector('.result__date');
+  var timeResult = document.querySelector('.result__time');
+  var form = document.querySelector('.form__body');
+  var submitButton = form.querySelector('.form__button');
+  console.log(submitButton);
+
+
+  var priceInput = document.querySelector('#price');
+
+  var priceResult = document.querySelector('.result__price');
+  var formRadioList = document.querySelector('.form__radio-list');
+  var formRadioItems = formRadioList.querySelectorAll('.form__radio-item');
+
+
 
   var calendar = document.querySelector('.date');
 
@@ -97,7 +113,7 @@
     console.log(now);
 
     var dateInput = document.querySelector('#date');
-    var dateLabel = document.querySelector('label[for="date"]');
+    var dateLabel = document.querySelector('.form__calendar');
     var formTime = document.querySelector('.form__time');
 
     calendar.addEventListener('pickmeup-change', function (e) {
@@ -125,12 +141,25 @@
 
       dateInput.value = choosenDate;
       dateLabel.textContent = date + " " + monthName[month];
+      dateResult.textContent = date + " " + monthName[month];
       pickmeup('.date').hide();
       formTime.classList.add('form__time--visible');
 
     })
   }
 
+  if (formRadioList) {
+    formRadioItems.forEach(el =>
+      el.addEventListener('click', function () {
+        if (el.querySelector('input').checked) {
+          timeResult.textContent = " " + "в " + el.querySelector('input').value;
+          priceResult.textContent = "К оплате " + el.querySelector('span').textContent;
+          priceInput.value = el.querySelector('span').textContent;
+          console.log(priceInput.value);
+          submitButton.classList.add('form__button--active');
+        }
+      }));
+  }
 
 })();
 

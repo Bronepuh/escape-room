@@ -1,14 +1,11 @@
 .choice {
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 
 .choice__container {
-  position: absolute;
-  left: 50%;
-  top: 100px;
-  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -16,7 +13,7 @@
   width: 1440px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 0;
+  padding-top: 100px;
   padding-left: 135px;
   padding-right: 135px;
   overflow: scroll;

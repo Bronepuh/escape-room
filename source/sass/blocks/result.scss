@@ -1,0 +1,27 @@
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 180px;
+  padding-top: 50px;
+
+  @media (max-width: 620px) {
+    order: 3;
+  }
+}
+
+.result span {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+span.result__date {
+  margin-right: 6px;
+}

@@ -18,9 +18,7 @@
 
   &::-webkit-scrollbar {
     width: 0;
-  }
-
-  ;
+  };
 
   -ms-overflow-style: none;
 
@@ -62,7 +60,12 @@
 
   &--choice {
     background-image: none;
-    overflow: hidden;
+    height: auto;
+
+    .page-header {
+      position: fixed;
+      background-color: $basic-bg;
+    }
 
     &::after {
       background-image: none;
@@ -73,7 +76,7 @@
     }
 
     .page-footer {
-      position: absolute;
+      position: fixed;
       bottom: 0;
 
       &::before {
@@ -138,6 +141,7 @@
     background-image: none;
 
     .overlay {
+      position: absolute;
       width: 100%;
       height: 100%;
       background-image: url("../img/form-bg-desktop.webp");
