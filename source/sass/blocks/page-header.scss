@@ -1,4 +1,5 @@
 .page-header {
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -11,7 +12,7 @@
       height: 100%;
 
       .page-header__container {
-        background-image: linear-gradient(170.74deg, #633C0F -68.98%, #24150E 75.12%, #1A140D 132.97%);
+        background-image: linear-gradient(170.74deg, #633c0f -68.98%, #24150e 75.12%, #1a140d 132.97%);
         overflow: hidden;
       }
 
@@ -122,7 +123,7 @@
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.03em;
-    font-feature-settings: 'pnum'on, 'lnum'on;
+    font-feature-settings: "pnum"on, "lnum"on;
     text-transform: uppercase;
     color: $basic-white-2;
     border: none;

@@ -37,6 +37,8 @@
   flex-wrap: wrap;
   align-items: center;
   margin-left: 23px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
   @media (max-width: $tablet-width) {
     justify-content: center;
@@ -54,7 +56,7 @@
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum"on, "lnum"on;
   color: $basic-white-2;
   text-decoration: none;
 

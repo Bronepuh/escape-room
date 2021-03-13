@@ -4,8 +4,7 @@
   align-items: center;
   align-content: flex-start;
   width: 1440px;
-  margin: 0 auto;
-  padding-top: 38px;
+  margin: auto 0;
   padding-bottom: 23px;
   padding-left: 135px;
   padding-right: 32px;
@@ -15,6 +14,7 @@
   }
 
   @media (max-width: $tablet-width) {
+    margin-bottom: 0;
     align-content: flex-end;
     padding-left: 32px;
     padding-right: 32px;
@@ -25,14 +25,14 @@
 .description h2 {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   width: 100%;
+  margin-top: 32px;
   margin-bottom: 16px;
   font-style: normal;
   font-weight: 800;
   font-size: 64px;
   line-height: 70px;
-  display: flex;
-  align-items: center;
   color: $basic-white;
 
   @media (max-width: $tablet-width) {
@@ -79,7 +79,7 @@
   }
 }
 
-.description__button a{
+.description__button a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

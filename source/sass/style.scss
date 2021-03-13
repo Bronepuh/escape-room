@@ -4,6 +4,7 @@
 @import "visually-hidden.scss";
 
 //blocks
+@import "blocks/button.scss";
 @import "blocks/page.scss";
 @import "blocks/page-body.scss";
 @import "blocks/page-header.scss";
@@ -18,8 +19,10 @@
 @import "blocks/page-footer.scss";
 @import "blocks/social.scss";
 @import "blocks/overlay.scss";
-@import "blocks/pickmeup.scss";
+@import "../js/vendor/pickmeup.scss";
 @import "blocks/page-form.scss";
 @import "blocks/form.scss";
 @import "blocks/date.scss";
 @import "blocks/result.scss";
+@import "blocks/popup.scss";
+@import "blocks/location.scss";

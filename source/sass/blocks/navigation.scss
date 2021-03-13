@@ -31,6 +31,8 @@
   display: flex;
   flex-wrap: wrap;
   margin-left: 47px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
   @media (max-width: 830px) {
     margin-left: 25px;
@@ -52,7 +54,7 @@
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum"on, "lnum"on;
   color: $basic-white;
   text-decoration: none;
 

@@ -9,6 +9,10 @@
   padding-bottom: 10px;
   cursor: pointer;
 
+  @media (max-width: $tablet-width) {
+    margin-right: 13px;
+  }
+
   &::before {
     position: absolute;
     content: "";

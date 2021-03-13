@@ -80,7 +80,78 @@
     </div>
   </footer>
 
-  <div class="page-body__oberlay overlay"></div>
+  <!-- location-popup -->
+  <div class="popup popup--location popup--hidden">
+    <div class="popup__body">
+      <h2 class="popup__title">
+        Ваш город:
+      </h2>
+      <button class="popup__close" type="button" aria-label="закрыть попап"></button>
+      <div class="popup__location location">
+        <a class="location__detected" href="#">
+          Определить местоположение
+        </a>
+        <span class="location__detected-2">
+          ... или выберите вручную
+        </span>
+        <ul class="location__list">
+          <li class="location__item">
+            <a href="#" class="location__link location__link--active">Новосибирск</a>
+          </li>
+          <li class="location__item">
+            <a href="#" class="location__link">Иркутск</a>
+          </li>
+          <li class="location__item">
+            <a href="#" class="location__link">Смоленск</a>
+          </li>
+          <li class="location__item">
+            <a href="#" class="location__link">Волгоград</a>
+          </li>
+          <li class="location__item">
+            <a href="#" class="location__link">Комсомольск-на-Амуре</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- feadback-popap -->
+  <div class="popup popup--feadback popup--hidden">
+    <h2 class="popup__title">
+      Задайте вопрос
+    </h2>
+    <button class="popup__close" type="button" aria-label="закрыть попап"></button>
+    <form class="form form--feadback" action="https://echo.htmlacademy.ru" method="GET">
+      <label class="form__label form__label--title" for="user-name">
+        Чтобы мы смогли обращаться к вам, оставьте ваше имя
+      </label>
+      <div class="form__input-wrapper form__input-wrapper--success">
+        <input class="form__input" type="text" id="user-name" name="name" placeholder="Имя" required>
+      </div>
+      <label class="form__label form__label--title" for="user-email">
+        Чтобы вы получили ответ, оставьте ваш <br> e-mail
+      </label>
+      <div class="form__input-wrapper form__input-wrapper--error">
+        <input class="form__input" type="email" id="user-email" name="email" placeholder="Email" required>
+        <span class="form__input-msg">Введён некорректный e-mail, попробуйте заново</span>
+      </div>
+      <label class="form__label" for="user-textarea">
+        Ваш вопрос:
+      </label>
+      <textarea class="form__textarea" id="user-textarea" name="comment" cols="42" rows="4"
+        placeholder="Начните вводить ..."></textarea>
+      <button class="button button--feadback" type="submit">ОТПРАВИТЬ ВОПРОС</button>
+      <div class="form__contract">
+        <input class="form__input form__input--checkbox visually-hidden" type="checkbox" id="rules" name="rules"
+          required tabindex="0">
+        <label class="form__label form__label--checkbox" for="rules">Я согласен с</label>
+        <a href="#">правилами обработки персональных данных</a>
+        <span>и пользовательским соглашением</span>
+      </div>
+    </form>
+  </div>
+
+  <div class="page-body__overlay overlay"></div>
 
   <script src="js/main.js"></script>
 

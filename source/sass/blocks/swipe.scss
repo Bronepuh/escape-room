@@ -10,6 +10,10 @@
   margin-top: 20px;
   margin-bottom: 39px;
   overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 32px;
+  }
 }
 
 .swipe__list {
@@ -72,6 +76,7 @@
     @media (max-width: $tablet-width) {
       padding-left: 32px;
       padding-right: 18px;
+
       &::before {
         height: 24px;
       }
@@ -94,10 +99,12 @@
     }
 
     @media (max-width: $tablet-width) {
-      padding-right: 18px;
-      padding-left: 60px;
+      padding-right: 17px;
+      padding-left: 55px;
+
       &::before {
-        left: 20px;
+        top: 8px;
+        left: 15px;
         height: 24px;
       }
     }
@@ -119,9 +126,11 @@
 
     @media (max-width: $tablet-width) {
       padding-right: 18px;
-      padding-left: 60px;
+      padding-left: 55px;
+
       &::before {
-        left: 20px;
+        top: 8px;
+        left: 16px;
         height: 24px;
       }
     }
@@ -144,6 +153,7 @@
     @media (max-width: $tablet-width) {
       padding-right: 18px;
       padding-left: 60px;
+
       &::before {
         left: 20px;
         height: 24px;
@@ -168,6 +178,7 @@
     @media (max-width: $tablet-width) {
       padding-right: 18px;
       padding-left: 60px;
+
       &::before {
         left: 20px;
         height: 24px;
@@ -192,6 +203,7 @@
     @media (max-width: $tablet-width) {
       padding-right: 18px;
       padding-left: 60px;
+
       &::before {
         left: 20px;
         height: 24px;
@@ -200,7 +212,6 @@
   }
 
   &:last-child {
-
     &::after {
       display: none;
     }

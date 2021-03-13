@@ -1,5 +1,6 @@
 .page-footer {
-  position: fixed;
+  position: absolute;
+  top: auto;
   bottom: 0;
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +49,7 @@
   font-size: 12px;
   line-height: 17px;
   text-align: right;
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum"on, "lnum"on;
   color: $text-white;
   background-color: transparent;
   border: none;
