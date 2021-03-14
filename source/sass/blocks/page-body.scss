@@ -34,6 +34,7 @@
   }
 
   &--popup {
+    overflow: hidden;
     // background: #3d3333;
     .overlay {
       position: absolute;

@@ -15,6 +15,7 @@
   text-decoration: none;
   text-transform: uppercase;
   border: none;
+  cursor: pointer;
 
   &:hover {
     background-color: $light-orange;
@@ -28,7 +29,13 @@
     opacity: 0.6;
   }
 
+  &:disabled {
+    background-color: #888888;
+    cursor: default;
+  }
+
   &--feadback {
+    order: 4;
     display: flex;
     justify-self: center;
     width: 220px;

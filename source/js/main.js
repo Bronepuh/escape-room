@@ -5,7 +5,12 @@
   var pageMain = document.querySelector('.page-main');
   var pageFooter = document.querySelector('.page-footer');
   var headerToggle = document.querySelector('.page-header__toggle');
+  var feedbackForm = document.querySelector('.form--feadback');
   var menuItems = document.querySelectorAll('.navigation__item');
+  var inputWrappers = document.querySelectorAll('.form__input-wrapper');
+  var userNameInput = document.querySelector('#user-name');
+  var userEmailInput = document.querySelector('#user-email');
+  var inputMsgs = document.querySelectorAll('.form__input-msg');
 
   if (pageHeader) {
     pageHeader.classList.remove('page-header--nojs');
@@ -50,6 +55,7 @@
   var titleResult = document.querySelector('.result__title');
   var dateResult = document.querySelector('.result__date');
   var timeResult = document.querySelector('.result__time');
+  var feadbsckSubmitButton = document.querySelector('.button--feadback');
   var buySubmitButton = document.querySelector('.button--buy');
   var priceInput = document.querySelector('#price');
   var priceResult = document.querySelector('.result__price');
@@ -62,21 +68,26 @@
       format: 'Y-m-d',
       render: function (date) {
         if (date < now) {
-          return {disabled: true, class_name: 'date-in-past'};
+          return {
+            disabled: true,
+            className: 'date-in-past'
+          };
         }
         return {};
       }
     });
 
-    var now = new Date;
+    var now = new Date();
 
     var dateInput = document.querySelector('#date');
     var dateLabel = document.querySelector('.form__calendar');
     var formTime = document.querySelector('.form__time');
 
     calendar.addEventListener('pickmeup-change', function (e) {
-      // console.log(e.detail.formatted_date); // New date according to current format
-      // console.log(e.detail.date); // New date as Date object
+      // console.log(e.detail.formatted_date);
+      // New date according to current format
+      // console.log(e.detail.date);
+      // New date as Date object
 
       var choosenDate = e.detail.formatted_date;
       var date = Number(choosenDate[8] + choosenDate[9]);
@@ -105,30 +116,89 @@
       formTime.classList.add('form__time--visible');
 
     });
-  };
-
-  if (formRadioList) {
-    formRadioItems.forEach(el =>
-      el.addEventListener('click', function () {
-        if (el.querySelector('input').checked) {
-
-          var getPrice = function () {
-            var price = String(el.querySelector('span').textContent);
-            var priceArray = price.split('');
-            priceArray.pop();
-            price = priceArray.join('');
-            return price;
-          }
-
-          priceInput.value = getPrice();
-          timeResult.textContent = ' ' + 'в ' + el.querySelector('input').value;
-          priceResult.textContent = 'К оплате ' + priceInput.value + ' рублей';
-          buySubmitButton.classList.add('button--active');
-        }
-      }));
   }
 
-  //location-popup
+  if (formRadioList) {
+    var renderInfo = function (el) {
+      var getPrice = function () {
+        var price = String(el.querySelector('span').textContent);
+        var priceArray = price.split('');
+        priceArray.pop();
+        price = priceArray.join('');
+        return price;
+      };
+
+      if (el.querySelector('input').checked) {
+        priceInput.value = getPrice();
+        timeResult.textContent = ' ' + 'в ' + el.querySelector('input').value;
+        priceResult.textContent = 'К оплате ' + priceInput.value + ' рублей';
+        buySubmitButton.classList.add('button--active');
+      }
+    };
+
+    var element = formRadioItems[0];
+    var element1 = formRadioItems[1];
+    var element2 = formRadioItems[2];
+    var element3 = formRadioItems[3];
+    var element4 = formRadioItems[4];
+    var element5 = formRadioItems[5];
+    var element6 = formRadioItems[6];
+    var element7 = formRadioItems[7];
+    var element8 = formRadioItems[8];
+    var element9 = formRadioItems[9];
+    var element10 = formRadioItems[10];
+    var element11 = formRadioItems[11];
+
+    element.addEventListener('click', function () {
+      renderInfo(element);
+    });
+
+    element1.addEventListener('click', function () {
+      renderInfo(element1);
+    });
+
+    element2.addEventListener('click', function () {
+      renderInfo(element2);
+    });
+
+    element3.addEventListener('click', function () {
+      renderInfo(element3);
+    });
+
+    element4.addEventListener('click', function () {
+      renderInfo(element4);
+    });
+
+    element5.addEventListener('click', function () {
+      renderInfo(element5);
+    });
+
+    element6.addEventListener('click', function () {
+      renderInfo(element6);
+    });
+
+    element7.addEventListener('click', function () {
+      renderInfo(element7);
+    });
+
+    element8.addEventListener('click', function () {
+      renderInfo(element8);
+    });
+
+    element9.addEventListener('click', function () {
+      renderInfo(element9);
+    });
+
+    element10.addEventListener('click', function () {
+      renderInfo(element10);
+    });
+
+    element11.addEventListener('click', function () {
+      renderInfo(element11);
+    });
+  }
+
+  // location-popup
   var locationPopup = document.querySelector('.popup--location');
   var locationPopupButton = document.querySelector('.contacts__link--location');
 
@@ -159,10 +229,28 @@
     overlay.removeEventListener('click', closeLocationPopup);
   };
 
-  //feadback-popup
+  locationPopupButton.addEventListener('click', openLocationPopup);
+
+  // feadback-popup
   var overlay = document.querySelector('.overlay');
   var feadbackPopupButton = document.querySelector('.page-footer__question');
   var feadbackPopup = document.querySelector('.popup--feadback');
+
+  var clearInputs = function () {
+    userNameInput.value = '';
+    userEmailInput.value = '';
+  };
+
+  var clearNameClasses = function () {
+    inputWrappers[0].classList.remove('form__input-wrapper--success');
+    inputWrappers[0].classList.remove('form__input-wrapper--error');
+  };
+
+  var clearEmailClasses = function () {
+    inputWrappers[1].classList.remove('form__input-wrapper--success');
+    inputWrappers[1].classList.remove('form__input-wrapper--error');
+  };
+
 
   var FeadbackPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
@@ -171,6 +259,10 @@
   };
 
   var openFeadbackPopup = function () {
+    clearInputs();
+    clearNameClasses();
+    clearEmailClasses();
+    feadbsckSubmitButton.disabled = true;
     pageBody.classList.add('page-body--popup');
     feadbackPopup.classList.remove('popup--hidden');
     feadbackPopup.querySelector('.popup__close').addEventListener('click', function () {
@@ -179,6 +271,7 @@
     feadbackPopup.querySelector('.popup__close').focus();
     document.addEventListener('keydown', FeadbackPopupEscPress);
     overlay.addEventListener('click', closeFeadbackPopup);
+    userNameInput.focus();
   };
 
   var closeFeadbackPopup = function () {
@@ -191,7 +284,106 @@
     overlay.removeEventListener('click', closeFeadbackPopup);
   };
 
-  locationPopupButton.addEventListener('click', openLocationPopup);
   feadbackPopupButton.addEventListener('click', openFeadbackPopup);
+
+  // validation
+  var validationFeadbackForm = function () {
+    var minNameLenght = 2;
+    var maxNameLenght = 20;
+
+    // name
+    var submitName = false;
+
+    userNameInput.addEventListener('input', function () {
+      var inputNameValue = userNameInput.value;
+      var inputNameArr = inputNameValue.split(' ');
+
+      var checkValidationName = function (arrName) {
+
+        for (var index = 0; index < arrName.length; index++) {
+
+          var name = arrName[index];
+
+          if (name.includes('#') || name.includes('@') || name.includes('$') || name.includes('<') || name.includes('>') || name.includes('%') || name.includes('.') || name.includes('!') || name.includes('?') || name.includes('"') || name.includes('\'') || name.includes('&') || name.includes('|') || name.includes('\\') || name.includes('§') || name.includes('¶') || name.includes('+') || name.includes('-') || name.includes('=') || name.includes('*') || name.includes(',') || name.includes('/')) {
+            userNameInput.setCustomValidity('');
+            inputMsgs[0].textContent = 'Имя не должно содержать спецсимволы (#, @, $ и т. п.), знаки пунктуации, эмодзи и т.п.';
+            clearNameClasses();
+            inputWrappers[0].classList.add('form__input-wrapper--error');
+            submitName = false;
+          } else if (name.length < minNameLenght) {
+            userNameInput.setCustomValidity('');
+            inputMsgs[0].textContent = 'Имя должно состоять из 2-х и более символов';
+            clearNameClasses();
+            inputWrappers[0].classList.add('form__input-wrapper--error');
+            submitName = false;
+          } else if (name.length > maxNameLenght) {
+            userNameInput.setCustomValidity('');
+            inputMsgs[0].textContent = 'Имя не должно быть длиннее 10 символов';
+            clearNameClasses();
+            inputWrappers[0].classList.add('form__input-wrapper--error');
+            submitName = false;
+          } else if (name.length === 0) {
+            userNameInput.setCustomValidity('');
+            clearNameClasses();
+            submitName = false;
+          } else {
+            userNameInput.setCustomValidity('');
+            clearNameClasses();
+            inputWrappers[0].classList.add('form__input-wrapper--success');
+            inputMsgs[0].textContent = '';
+            submitName = true;
+          }
+        }
+      };
+
+      checkValidationName(inputNameArr);
+      if (submitName && submitEmail) {
+        feadbsckSubmitButton.disabled = false;
+      } else {
+        feadbsckSubmitButton.disabled = true;
+      }
+    });
+
+    // email
+    var submitEmail = false;
+
+    userEmailInput.addEventListener('input', function () {
+
+      var inputEmailValue = userEmailInput.value;
+
+      var checkValidationEmail = function (arrEmail) {
+
+        submitEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(arrEmail);
+
+        if (submitEmail) {
+          userEmailInput.setCustomValidity('');
+          clearEmailClasses();
+          inputWrappers[1].classList.add('form__input-wrapper--success');
+          inputMsgs[1].textContent = '';
+        } else {
+          userEmailInput.setCustomValidity('');
+          inputMsgs[1].textContent = 'Введён некорректный e-mail, попробуйте заново';
+          clearEmailClasses();
+          inputWrappers[1].classList.add('form__input-wrapper--error');
+        }
+      };
+
+      checkValidationEmail(inputEmailValue);
+      if (submitName && submitEmail) {
+        feadbsckSubmitButton.disabled = false;
+      } else {
+        feadbsckSubmitButton.disabled = true;
+      }
+    });
+  };
+
+  validationFeadbackForm();
+
+  // локалСторадж
+  feedbackForm.addEventListener('submit', function () {
+    localStorage.clear();
+    localStorage.setItem('name', userNameInput.value);
+    localStorage.setItem('email', userEmailInput.value);
+  });
 
 })();

@@ -125,22 +125,22 @@
       <label class="form__label form__label--title" for="user-name">
         Чтобы мы смогли обращаться к вам, оставьте ваше имя
       </label>
-      <div class="form__input-wrapper form__input-wrapper--success">
+      <div class="form__input-wrapper">
         <input class="form__input" type="text" id="user-name" name="name" placeholder="Имя" required>
+        <span class="form__input-msg"></span>
       </div>
       <label class="form__label form__label--title" for="user-email">
         Чтобы вы получили ответ, оставьте ваш <br> e-mail
       </label>
-      <div class="form__input-wrapper form__input-wrapper--error">
+      <div class="form__input-wrapper">
         <input class="form__input" type="email" id="user-email" name="email" placeholder="Email" required>
-        <span class="form__input-msg">Введён некорректный e-mail, попробуйте заново</span>
+        <span class="form__input-msg"></span>
       </div>
       <label class="form__label" for="user-textarea">
         Ваш вопрос:
       </label>
       <textarea class="form__textarea" id="user-textarea" name="comment" cols="42" rows="4"
         placeholder="Начните вводить ..."></textarea>
-      <button class="button button--feadback" type="submit">ОТПРАВИТЬ ВОПРОС</button>
       <div class="form__contract">
         <input class="form__input form__input--checkbox visually-hidden" type="checkbox" id="rules" name="rules"
           required tabindex="0">
@@ -148,6 +148,7 @@
         <a href="#">правилами обработки персональных данных</a>
         <span>и пользовательским соглашением</span>
       </div>
+      <button class="button button--feadback" type="submit">ОТПРАВИТЬ ВОПРОС</button>
     </form>
   </div>
 
