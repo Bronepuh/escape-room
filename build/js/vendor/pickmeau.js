@@ -75,28 +75,28 @@
 
   /**
    * @param {Element} element
-   * @param {string}  class_name
+   * @param {string}  classname
    *
    * @returns {boolean}
    */
-  function dom_has_class(element, class_name) {
-    return element && element.classList.contains(class_name);
+  function dom_has_class(element, classname) {
+    return element && element.classList.contains(classname);
   }
 
   /**
    * @param {Element} element
-   * @param {string}  class_name
+   * @param {string}  classname
    */
-  function dom_add_class(element, class_name) {
-    element.classList.add(class_name);
+  function dom_add_class(element, classname) {
+    element.classList.add(classname);
   }
 
   /**
    * @param {Element} element
-   * @param {string}  class_name
+   * @param {string}  classname
    */
-  function dom_remove_class(element, class_name) {
-    element.classList.remove(class_name);
+  function dom_remove_class(element, classname) {
+    element.classList.remove(classname);
   }
 
   /**
@@ -515,8 +515,8 @@
           if (val === today) {
             dom_add_class(day_element, 'pmu-today');
           }
-          if (from_user.class_name) {
-            from_user.class_name.split(' ').forEach(
+          if (from_user.classname) {
+            from_user.classname.split(' ').forEach(
               dom_add_class.bind(day_element, day_element)
             );
           }
@@ -1258,8 +1258,8 @@
       };
       element.__pickmeup_target = target;
       dom_add_class(element, 'pickmeup');
-      if (options.class_name) {
-        dom_add_class(element, options.class_name);
+      if (options.classname) {
+        dom_add_class(element, options.classname);
       }
       options.bound = {
         fill: fill.bind(target, target),
@@ -1334,7 +1334,7 @@
     format: 'd-m-Y',
     title_format: 'B, Y',
     position: 'bottom',
-    class_name: '',
+    classname: '',
     separator: ' - ',
     hide_on_select: false,
     min: null,
@@ -1381,13 +1381,13 @@
     },
     /**
      * @param {Element[]} elements
-     * @param {string}    container_class_name
+     * @param {string}    container_classname
      *
      * @returns {Element}
      */
-    instance_content_template: function (elements, container_class_name) {
+    instance_content_template: function (elements, container_classname) {
       var root_element = document.createElement('div');
-      dom_add_class(root_element, container_class_name);
+      dom_add_class(root_element, container_classname);
       for (var i = 0; i < elements.length; ++i) {
         dom_add_class(elements[i], 'pmu-button');
         root_element.appendChild(elements[i]);
