@@ -66,6 +66,10 @@
       }
     }
   }
+
+  &--bg {
+    background-color: $basic-bg;
+  }
 }
 
 .page-header__container {

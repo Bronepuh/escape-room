@@ -3,12 +3,13 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  min-height: 100%;
   align-content: flex-start;
   align-items: flex-start;
 
-  &::-webkit-scrollbar {
-    width: 0;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 0;
+  // }
 }
 
 .choice__container {

@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body class="page-body page-body--choice">
-  <header class="page-header page-header--nojs">
+<body class="page-body">
+  <header class="page-header page-header--nojs page-header--bg">
     <div class="page-header__container">
       <a class="page-header__logo" href="index.html" >
         <span class="visually-hidden">Логотип</span>
@@ -51,7 +51,7 @@
       </div>
     </div>
   </header>
-  <main class="page-main">
+  <main class="page-main page-main--choice">
     <h1 class="visually-hidden">Escape room</h1>
 
     <section class="page-main__choice choice">
@@ -305,8 +305,10 @@
       </div>
     </section>
 
+    <div class="page-body__overlay overlay overlay--relative"></div>
+
   </main>
-  <footer class="page-footer page-footer--nojs">
+  <footer class="page-footer page-footer--nojs page-footer--choice page-footer--fixed">
     <div class="page-footer__container">
       <div class="page-footer__social social">
         <ul class="social__list">
@@ -394,7 +396,7 @@
     </form>
   </div>
 
-  <div class="page-body__overlay overlay"></div>
+
 
   <script src="js/vendor/pickmeau.js"></script>
   <script src="js/main.js"></script>
