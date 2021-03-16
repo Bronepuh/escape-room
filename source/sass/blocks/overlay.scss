@@ -6,37 +6,4 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-
-  &--form {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/form-bg-desktop.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: left;
-
-    &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(26, 26, 26, 0.5);
-    }
-
-    &::after {
-      position: absolute;
-      content: "";
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("../img/form-bg-desktop-radial.webp");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position-x: left;
-    }
-  }
 }

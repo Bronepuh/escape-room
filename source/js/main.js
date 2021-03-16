@@ -7,10 +7,10 @@
   var headerToggle = document.querySelector('.page-header__toggle');
   var feedbackForm = document.querySelector('.form--feadback');
   var menuItems = document.querySelectorAll('.navigation__item');
-  var inputWrappers = document.querySelectorAll('.form__input-wrapper');
+  var inputWrappers = document.querySelectorAll('.inputfealds__input-wrapper');
   var userNameInput = document.querySelector('#user-name');
   var userEmailInput = document.querySelector('#user-email');
-  var inputMsgs = document.querySelectorAll('.form__input-msg');
+  var inputMsgs = document.querySelectorAll('.inputfields__item--feadback span');
 
   if (pageHeader) {
     pageHeader.classList.remove('page-header--nojs');
@@ -200,7 +200,7 @@
 
   // location-popup
   var locationPopup = document.querySelector('.popup--location');
-  var locationPopupButton = document.querySelector('.contacts__link--location');
+  var locationPopupButton = document.querySelector('.contacts__item--location');
 
   var locationPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
@@ -242,13 +242,13 @@
   };
 
   var clearNameClasses = function () {
-    inputWrappers[0].classList.remove('form__input-wrapper--success');
-    inputWrappers[0].classList.remove('form__input-wrapper--error');
+    inputWrappers[0].classList.remove('inputfealds__input-wrapper--success');
+    inputWrappers[0].classList.remove('inputfealds__input-wrapper--error');
   };
 
   var clearEmailClasses = function () {
-    inputWrappers[1].classList.remove('form__input-wrapper--success');
-    inputWrappers[1].classList.remove('form__input-wrapper--error');
+    inputWrappers[1].classList.remove('inputfealds__input-wrapper--success');
+    inputWrappers[1].classList.remove('inputfealds__input-wrapper--error');
   };
 
 
@@ -308,19 +308,19 @@
             userNameInput.setCustomValidity('');
             inputMsgs[0].textContent = 'Имя не должно содержать спецсимволы (#, @, $ и т. п.), знаки пунктуации, эмодзи и т.п.';
             clearNameClasses();
-            inputWrappers[0].classList.add('form__input-wrapper--error');
+            inputWrappers[0].classList.add('inputfealds__input-wrapper--error');
             submitName = false;
           } else if (name.length < minNameLenght) {
             userNameInput.setCustomValidity('');
             inputMsgs[0].textContent = 'Имя должно состоять из 2-х и более символов';
             clearNameClasses();
-            inputWrappers[0].classList.add('form__input-wrapper--error');
+            inputWrappers[0].classList.add('inputfealds__input-wrapper--error');
             submitName = false;
           } else if (name.length > maxNameLenght) {
             userNameInput.setCustomValidity('');
             inputMsgs[0].textContent = 'Имя не должно быть длиннее 10 символов';
             clearNameClasses();
-            inputWrappers[0].classList.add('form__input-wrapper--error');
+            inputWrappers[0].classList.add('inputfealds__input-wrapper--error');
             submitName = false;
           } else if (name.length === 0) {
             userNameInput.setCustomValidity('');
@@ -329,7 +329,7 @@
           } else {
             userNameInput.setCustomValidity('');
             clearNameClasses();
-            inputWrappers[0].classList.add('form__input-wrapper--success');
+            inputWrappers[0].classList.add('inputfealds__input-wrapper--success');
             inputMsgs[0].textContent = '';
             submitName = true;
           }
@@ -358,13 +358,13 @@
         if (submitEmail) {
           userEmailInput.setCustomValidity('');
           clearEmailClasses();
-          inputWrappers[1].classList.add('form__input-wrapper--success');
+          inputWrappers[1].classList.add('inputfealds__input-wrapper--success');
           inputMsgs[1].textContent = '';
         } else {
           userEmailInput.setCustomValidity('');
           inputMsgs[1].textContent = 'Введён некорректный e-mail, попробуйте заново';
           clearEmailClasses();
-          inputWrappers[1].classList.add('form__input-wrapper--error');
+          inputWrappers[1].classList.add('inputfealds__input-wrapper--error');
         }
       };
 

@@ -41,11 +41,11 @@
       </nav>
       <div class="page-header__contacts contacts">
         <ul class="contacts__list">
-          <li class="contacts__item">
-            <a class="contacts__link contacts__link--location" href="#">НОВОСИБИРСК</a>
+          <li class="contacts__item contacts__item--location">
+            <a href="#">НОВОСИБИРСК</a>
           </li>
           <li class="contacts__item">
-            <a class="contacts__link" href="tel:83832840160">8 (383) 284 01 60</a>
+            <a href="tel:83832840160">8 (383) 284 01 60</a>
           </li>
         </ul>
       </div>
@@ -305,8 +305,6 @@
       </div>
     </section>
 
-    <div class="page-body__overlay overlay overlay--relative"></div>
-
   </main>
   <footer class="page-footer page-footer--nojs page-footer--choice page-footer--fixed">
     <div class="page-footer__container">
@@ -366,35 +364,47 @@
     </h2>
     <button class="popup__close" type="button" aria-label="закрыть попап"></button>
     <form class="form form--feadback" action="https://echo.htmlacademy.ru" method="GET">
-      <label class="form__label form__label--title" for="user-name">
-        Чтобы мы смогли обращаться к вам, оставьте ваше имя
-      </label>
-      <div class="form__input-wrapper">
-        <input class="form__input" type="text" id="user-name" name="name" placeholder="Имя" required="">
-        <span class="form__input-msg"></span>
-      </div>
-      <label class="form__label form__label--title" for="user-email">
-        Чтобы вы получили ответ, оставьте ваш <br> e-mail
-      </label>
-      <div class="form__input-wrapper">
-        <input class="form__input" type="email" id="user-email" name="email" placeholder="Email" required="">
-        <span class="form__input-msg"></span>
-      </div>
-      <label class="form__label" for="user-textarea">
-        Ваш вопрос:
-      </label>
-      <textarea class="form__textarea" id="user-textarea" name="comment" cols="42" rows="4" placeholder="Начните вводить ..."></textarea>
-      <div class="form__contract">
-        <input class="form__input form__input--checkbox visually-hidden" type="checkbox" id="rules" name="rules" required="" tabindex="0">
-        <label class="form__label form__label--checkbox" for="rules">Я согласен с</label>
-        <a href="#">правилами обработки персональных данных</a>
-        <span>и пользовательским соглашением</span>
+
+      <ul class="inputfields inputfields--feadback">
+        <li class="inputfields__item inputfields__item--feadback">
+          <label for="user-name">
+            Чтобы мы смогли обращаться к вам, оставьте ваше имя
+          </label>
+          <div class="inputfealds__input-wrapper">
+            <input type="text" id="user-name" name="name" placeholder="Имя" required="">
+            <span></span>
+          </div>
+        </li>
+        <li class="inputfields__item inputfields__item--feadback">
+          <label for="user-email">
+            Чтобы вы получили ответ, оставьте ваш <br> e-mail
+          </label>
+          <div class="inputfealds__input-wrapper">
+            <input type="email" id="user-email" name="email" placeholder="Email" required="">
+            <span></span>
+          </div>
+        </li>
+        <li class="inputfields__item inputfields__item--feadback">
+          <label for="user-textarea">
+            Ваш вопрос:
+          </label>
+          <textarea id="user-textarea" name="comment" cols="42" rows="4" placeholder="Начните вводить ..."></textarea>
+        </li>
+      </ul>
+
+      <div class="inputfields inputfields--contract">
+        <div class="inputfields__item inputfields__item--contract">
+          <input type="checkbox" id="rules" name="rules" required="" tabindex="0">
+          <label for="rules">Я согласен с</label>
+          <a href="#">правилами обработки персональных данных</a>
+          <span>и пользовательским соглашением</span>
+        </div>
       </div>
       <button class="button button--feadback" type="submit">ОТПРАВИТЬ ВОПРОС</button>
     </form>
   </div>
 
-
+  <div class="page-body__overlay overlay"></div>
 
   <script src="js/vendor/pickmeau.js"></script>
   <script src="js/main.js"></script>

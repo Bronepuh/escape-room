@@ -41,16 +41,16 @@
     font-size: 36px;
     line-height: 40px;
   }
+}
 
-  span {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    letter-spacing: -0.7px;
+.description span {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  letter-spacing: -0.7px;
 
-    @media (max-width: $tablet-width) {
-      justify-content: center;
-    }
+  @media (max-width: $tablet-width) {
+    justify-content: center;
   }
 }
 
