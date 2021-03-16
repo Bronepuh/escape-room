@@ -10,14 +10,12 @@
   font-size: 17px;
   line-height: 25px;
   color: $text-white;
-  background-color: khaki;
   z-index: 5;
 
 
   &--popup {
     overflow: hidden;
 
-    // background: #3d3333;
     .overlay {
       position: absolute;
       width: 100%;
