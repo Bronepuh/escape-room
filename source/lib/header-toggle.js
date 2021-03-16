@@ -30,7 +30,7 @@
       pageMain.classList.remove('visually-hidden');
     };
 
-    var togglePageHeader = function () {
+    var headerToggleClickHandler = function () {
       if (pageHeader.classList.contains('page-header--closed')) {
         openMenu();
       } else {
@@ -40,7 +40,7 @@
   }
 
   if (headerToggle) {
-    headerToggle.addEventListener('click', togglePageHeader);
+    headerToggle.addEventListener('click', headerToggleClickHandler);
     for (var i = 0; i < menuItems.length; i++) {
       menuItems[i].addEventListener('click', closeMenu);
     }

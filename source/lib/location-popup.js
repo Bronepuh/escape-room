@@ -2,34 +2,35 @@
   var pageBody = document.querySelector('.page-body');
   var overlay = document.querySelector('.overlay');
   var locationPopup = document.querySelector('.popup--location');
-  var locationPopupButton = document.querySelector('.contacts__item--location');
+  var locationPopupOpen = document.querySelector('.contacts__item--location');
+  var locationPopupClose = document.querySelector('.popup--location .popup__close');
 
   var locationPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
-      closeLocationPopup();
+      locationPopupCloseClickHandler();
     }
   };
 
-  var openLocationPopup = function () {
+  var locationPopupOpenClickHandler = function () {
     pageBody.classList.add('page-body--popup');
     locationPopup.classList.remove('popup--hidden');
-    locationPopup.querySelector('.popup__close').addEventListener('click', function () {
-      closeLocationPopup();
+    locationPopupClose.addEventListener('click', function () {
+      locationPopupCloseClickHandler();
     });
     locationPopup.querySelector('.popup__close').focus();
     document.addEventListener('keydown', locationPopupEscPress);
-    overlay.addEventListener('click', closeLocationPopup);
+    overlay.addEventListener('click', locationPopupCloseClickHandler);
   };
 
-  var closeLocationPopup = function () {
+  var locationPopupCloseClickHandler = function () {
     pageBody.classList.remove('page-body--popup');
     locationPopup.classList.add('popup--hidden');
     document.removeEventListener('keydown', locationPopupEscPress);
-    locationPopup.querySelector('.popup__close').removeEventListener('click', function () {
-      closeLocationPopup();
+    locationPopupClose.removeEventListener('click', function () {
+      locationPopupCloseClickHandler();
     });
-    overlay.removeEventListener('click', closeLocationPopup);
+    overlay.removeEventListener('click', locationPopupCloseClickHandler);
   };
 
-  locationPopupButton.addEventListener('click', openLocationPopup);
+  locationPopupOpen.addEventListener('click', locationPopupOpenClickHandler);
 })();

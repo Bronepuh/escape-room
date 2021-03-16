@@ -30,7 +30,7 @@
       pageMain.classList.remove('visually-hidden');
     };
 
-    var togglePageHeader = function () {
+    var headerToggleClickHandler = function () {
       if (pageHeader.classList.contains('page-header--closed')) {
         openMenu();
       } else {
@@ -40,7 +40,7 @@
   }
 
   if (headerToggle) {
-    headerToggle.addEventListener('click', togglePageHeader);
+    headerToggle.addEventListener('click', headerToggleClickHandler);
     for (var i = 0; i < menuItems.length; i++) {
       menuItems[i].addEventListener('click', closeMenu);
     }
@@ -51,47 +51,49 @@
   var pageBody = document.querySelector('.page-body');
   var overlay = document.querySelector('.overlay');
   var locationPopup = document.querySelector('.popup--location');
-  var locationPopupButton = document.querySelector('.contacts__item--location');
+  var locationPopupOpen = document.querySelector('.contacts__item--location');
+  var locationPopupClose = document.querySelector('.popup--location .popup__close');
 
   var locationPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
-      closeLocationPopup();
+      locationPopupCloseClickHandler();
     }
   };
 
-  var openLocationPopup = function () {
+  var locationPopupOpenClickHandler = function () {
     pageBody.classList.add('page-body--popup');
     locationPopup.classList.remove('popup--hidden');
-    locationPopup.querySelector('.popup__close').addEventListener('click', function () {
-      closeLocationPopup();
+    locationPopupClose.addEventListener('click', function () {
+      locationPopupCloseClickHandler();
     });
     locationPopup.querySelector('.popup__close').focus();
     document.addEventListener('keydown', locationPopupEscPress);
-    overlay.addEventListener('click', closeLocationPopup);
+    overlay.addEventListener('click', locationPopupCloseClickHandler);
   };
 
-  var closeLocationPopup = function () {
+  var locationPopupCloseClickHandler = function () {
     pageBody.classList.remove('page-body--popup');
     locationPopup.classList.add('popup--hidden');
     document.removeEventListener('keydown', locationPopupEscPress);
-    locationPopup.querySelector('.popup__close').removeEventListener('click', function () {
-      closeLocationPopup();
+    locationPopupClose.removeEventListener('click', function () {
+      locationPopupCloseClickHandler();
     });
-    overlay.removeEventListener('click', closeLocationPopup);
+    overlay.removeEventListener('click', locationPopupCloseClickHandler);
   };
 
-  locationPopupButton.addEventListener('click', openLocationPopup);
+  locationPopupOpen.addEventListener('click', locationPopupOpenClickHandler);
 })();
 
 (function () {
   var pageBody = document.querySelector('.page-body');
   var feedbackForm = document.querySelector('.form--feedback');
-  var inputWrappers = document.querySelectorAll('.inputfealds__input-wrapper');
+  var inputWrappers = document.querySelectorAll('.inputfeelds__input-wrapper');
   var userNameInput = document.querySelector('#user-name');
   var userEmailInput = document.querySelector('#user-email');
-  var inputMsgs = document.querySelectorAll('.inputfields__item--feedback span');
+  var inputMsgs = document.querySelectorAll('.inputfeelds__item--feedback span');
   var overlay = document.querySelector('.overlay');
-  var feedbackPopupButton = document.querySelector('.page-footer__question');
+  var feedbackPopupOpen = document.querySelector('.page-footer__question');
+  var feedbackPopupClose = document.querySelector('.popup--feedback .popup__close');
   var feedbackSubmitButton = document.querySelector('.button--feedback');
   var feedbackPopup = document.querySelector('.popup--feedback');
 
@@ -101,77 +103,74 @@
   };
 
   var clearInputClasses = function (el) {
-    el.classList.remove('inputfealds__input-wrapper--success');
-    el.classList.remove('inputfealds__input-wrapper--error');
+    el.classList.remove('inputfeelds__input-wrapper--success');
+    el.classList.remove('inputfeelds__input-wrapper--error');
   };
 
   var feedbackPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
-      closeFeedbackPopup();
+      feedbackPopupCloseClickHandler();
     }
   };
 
-  var openFeedbackPopup = function () {
+  var feedbackPopupOpenClickHandler = function () {
     clearInputs();
     clearInputClasses(inputWrappers[0]);
     clearInputClasses(inputWrappers[1]);
     feedbackSubmitButton.disabled = true;
     pageBody.classList.add('page-body--popup');
     feedbackPopup.classList.remove('popup--hidden');
-    feedbackPopup.querySelector('.popup__close').addEventListener('click', function () {
-      closeFeedbackPopup();
+    feedbackPopupClose.addEventListener('click', function () {
+      feedbackPopupCloseClickHandler();
     });
     feedbackPopup.querySelector('.popup__close').focus();
     document.addEventListener('keydown', feedbackPopupEscPress);
-    overlay.addEventListener('click', closeFeedbackPopup);
+    overlay.addEventListener('click', feedbackPopupCloseClickHandler);
     userNameInput.focus();
   };
 
-  var closeFeedbackPopup = function () {
+  var feedbackPopupCloseClickHandler = function () {
     pageBody.classList.remove('page-body--popup');
     feedbackPopup.classList.add('popup--hidden');
     document.removeEventListener('keydown', feedbackPopupEscPress);
-    feedbackPopup.querySelector('.popup__close').removeEventListener('click', function () {
-      closeFeedbackPopup();
+    feedbackPopupClose.removeEventListener('click', function () {
+      feedbackPopupCloseClickHandler();
     });
-    overlay.removeEventListener('click', closeFeedbackPopup);
+    overlay.removeEventListener('click', feedbackPopupCloseClickHandler);
   };
 
-  feedbackPopupButton.addEventListener('click', openFeedbackPopup);
+  feedbackPopupOpen.addEventListener('click', feedbackPopupOpenClickHandler);
 
   // validation
   var checkValidationFeedbackForm = function () {
-    var minNameLength = 2;
-    var maxNameLength = 10;
 
     // name
+    var minNameLength = 2;
+    var maxNameLength = 10;
     var submitName = false;
 
-    userNameInput.addEventListener('input', function () {
+    var userNameInputHandler = function () {
       var inputNameValue = userNameInput.value;
       var inputNameArr = inputNameValue.split(' ');
 
       var showNameError = function () {
         userNameInput.setCustomValidity('');
         clearInputClasses(inputWrappers[0]);
-        inputWrappers[0].classList.add('inputfealds__input-wrapper--error');
+        inputWrappers[0].classList.add('inputfeelds__input-wrapper--error');
         submitName = false;
       };
 
       var showNameSuccess = function () {
         userNameInput.setCustomValidity('');
         clearInputClasses(inputWrappers[0]);
-        inputWrappers[0].classList.add('inputfealds__input-wrapper--success');
+        inputWrappers[0].classList.add('inputfeelds__input-wrapper--success');
         inputMsgs[0].textContent = '';
         submitName = true;
       };
 
       var checkValidationName = function (arrName) {
-
         for (var index = 0; index < arrName.length; index++) {
-
           var name = arrName[index];
-
           if (name.includes('#') || name.includes('@') || name.includes('$') || name.includes('<') || name.includes('>') || name.includes('%') || name.includes('.') || name.includes('!') || name.includes('?') || name.includes('"') || name.includes('\'') || name.includes('&') || name.includes('|') || name.includes('\\') || name.includes('§') || name.includes('¶') || name.includes('+') || name.includes('-') || name.includes('=') || name.includes('*') || name.includes(',') || name.includes('/')) {
             showNameError();
             inputMsgs[0].textContent = 'Имя не должно содержать спецсимволы (#, @, $ и т. п.), знаки пунктуации, эмодзи и т.п.';
@@ -191,35 +190,32 @@
       };
 
       checkValidationName(inputNameArr);
-
       if (submitName && submitEmail) {
         feedbackSubmitButton.disabled = false;
       } else {
         feedbackSubmitButton.disabled = true;
       }
+    };
 
-      // feedbackSubmitButton.disabled = !Boolean(submitName && submitEmail);
-
-    });
+    userNameInput.addEventListener('input', userNameInputHandler);
 
     // email
     var submitEmail = false;
 
-    userEmailInput.addEventListener('input', function () {
-
+    var userEmailInputHandler = function () {
       var inputEmailValue = userEmailInput.value;
 
       var showEmailError = function () {
         userEmailInput.setCustomValidity('');
         inputMsgs[1].textContent = 'Введён некорректный e-mail, попробуйте заново';
         clearInputClasses(inputWrappers[1]);
-        inputWrappers[1].classList.add('inputfealds__input-wrapper--error');
+        inputWrappers[1].classList.add('inputfeelds__input-wrapper--error');
       };
 
       var showEmailSuccess = function () {
         userEmailInput.setCustomValidity('');
         clearInputClasses(inputWrappers[1]);
-        inputWrappers[1].classList.add('inputfealds__input-wrapper--success');
+        inputWrappers[1].classList.add('inputfeelds__input-wrapper--success');
         inputMsgs[1].textContent = '';
       };
 
@@ -241,9 +237,9 @@
       } else {
         feedbackSubmitButton.disabled = true;
       }
+    };
 
-      // feedbackSubmitButton.disabled = !Boolean(submitName && submitEmail);
-    });
+    userEmailInput.addEventListener('input', userEmailInputHandler);
   };
 
   checkValidationFeedbackForm();
@@ -263,7 +259,7 @@
   var buySubmitButton = document.querySelector('.button--buy');
   var priceInput = document.querySelector('#price');
   var priceResult = document.querySelector('.result__price');
-  var formRadioItems = document.querySelectorAll('.inputfields__item--radio');
+  var formRadioItems = document.querySelectorAll('.inputfeelds__item--radio');
   var calendar = document.querySelector('.date');
   var form = document.querySelector('.page-form.form');
 
