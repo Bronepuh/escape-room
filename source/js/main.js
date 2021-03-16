@@ -168,10 +168,31 @@
         submitName = true;
       };
 
+      var simbolsArray = ['#', '@', '$', '<', '>', '%', '.', '!', '?', '"', '\'', '&', '|', '\\', '§', '¶', '+', '-', '=', '*', ',', '/'];
+
+      var checkAvailability = function (arr, val) {
+        return arr.some(function (arrVal) {
+          return val === arrVal;
+        });
+      };
+
       var checkValidationName = function (arrName) {
+
+        var wrongName = false;
+
         for (var index = 0; index < arrName.length; index++) {
           var name = arrName[index];
-          if (name.includes('#') || name.includes('@') || name.includes('$') || name.includes('<') || name.includes('>') || name.includes('%') || name.includes('.') || name.includes('!') || name.includes('?') || name.includes('"') || name.includes('\'') || name.includes('&') || name.includes('|') || name.includes('\\') || name.includes('§') || name.includes('¶') || name.includes('+') || name.includes('-') || name.includes('=') || name.includes('*') || name.includes(',') || name.includes('/')) {
+
+          for (var simbolIndex = 0; simbolIndex < name.length; simbolIndex++) {
+            var simbol = name[simbolIndex];
+            var wrongSimbol = checkAvailability(simbolsArray, simbol);
+
+            if (wrongSimbol) {
+              wrongName = true;
+            }
+          }
+
+          if (wrongName) {
             showNameError();
             inputMsgs[0].textContent = 'Имя не должно содержать спецсимволы (#, @, $ и т. п.), знаки пунктуации, эмодзи и т.п.';
           } else if (name.length < minNameLength) {
@@ -190,6 +211,7 @@
       };
 
       checkValidationName(inputNameArr);
+
       if (submitName && submitEmail) {
         feedbackSubmitButton.disabled = false;
       } else {
@@ -286,22 +308,22 @@
 
       calendar.addEventListener('pickmeup-change', function (evt) {
         var chosenDate = evt.detail.formatted_date;
-        var date = Number(chosenDate[8] + chosenDate[9]);
-        var month = Number(chosenDate[5] + chosenDate[6]);
+        var date = evt.detail.date.getDate();
+        var month = evt.detail.date.getMonth();
 
         var monthNumberToName = {
-          1: 'января',
-          2: 'февраля',
-          3: 'марта',
-          4: 'апреля',
-          5: 'мая',
-          6: 'июня',
-          7: 'июля',
-          8: 'августа',
-          9: 'сентября',
-          10: 'октября',
-          11: 'ноября',
-          12: 'декабря'
+          0: 'января',
+          1: 'февраля',
+          2: 'марта',
+          3: 'апреля',
+          4: 'мая',
+          5: 'июня',
+          6: 'июля',
+          7: 'августа',
+          8: 'сентября',
+          9: 'октября',
+          10: 'ноября',
+          11: 'декабря'
         };
 
         titleResult.textContent = 'Вы выбрали игру';

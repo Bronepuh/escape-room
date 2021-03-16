@@ -82,10 +82,31 @@
         submitName = true;
       };
 
+      var simbolsArray = ['#', '@', '$', '<', '>', '%', '.', '!', '?', '"', '\'', '&', '|', '\\', '§', '¶', '+', '-', '=', '*', ',', '/'];
+
+      var checkAvailability = function (arr, val) {
+        return arr.some(function (arrVal) {
+          return val === arrVal;
+        });
+      };
+
       var checkValidationName = function (arrName) {
+
+        var wrongName = false;
+
         for (var index = 0; index < arrName.length; index++) {
           var name = arrName[index];
-          if (name.includes('#') || name.includes('@') || name.includes('$') || name.includes('<') || name.includes('>') || name.includes('%') || name.includes('.') || name.includes('!') || name.includes('?') || name.includes('"') || name.includes('\'') || name.includes('&') || name.includes('|') || name.includes('\\') || name.includes('§') || name.includes('¶') || name.includes('+') || name.includes('-') || name.includes('=') || name.includes('*') || name.includes(',') || name.includes('/')) {
+
+          for (var simbolIndex = 0; simbolIndex < name.length; simbolIndex++) {
+            var simbol = name[simbolIndex];
+            var wrongSimbol = checkAvailability(simbolsArray, simbol);
+
+            if (wrongSimbol) {
+              wrongName = true;
+            }
+          }
+
+          if (wrongName) {
             showNameError();
             inputMsgs[0].textContent = 'Имя не должно содержать спецсимволы (#, @, $ и т. п.), знаки пунктуации, эмодзи и т.п.';
           } else if (name.length < minNameLength) {
@@ -104,6 +125,7 @@
       };
 
       checkValidationName(inputNameArr);
+      
       if (submitName && submitEmail) {
         feedbackSubmitButton.disabled = false;
       } else {

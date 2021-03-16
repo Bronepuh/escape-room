@@ -32,22 +32,22 @@
 
       calendar.addEventListener('pickmeup-change', function (evt) {
         var chosenDate = evt.detail.formatted_date;
-        var date = Number(chosenDate[8] + chosenDate[9]);
-        var month = Number(chosenDate[5] + chosenDate[6]);
+        var date = evt.detail.date.getDate();
+        var month = evt.detail.date.getMonth();
 
         var monthNumberToName = {
-          1: 'января',
-          2: 'февраля',
-          3: 'марта',
-          4: 'апреля',
-          5: 'мая',
-          6: 'июня',
-          7: 'июля',
-          8: 'августа',
-          9: 'сентября',
-          10: 'октября',
-          11: 'ноября',
-          12: 'декабря'
+          0: 'января',
+          1: 'февраля',
+          2: 'марта',
+          3: 'апреля',
+          4: 'мая',
+          5: 'июня',
+          6: 'июля',
+          7: 'августа',
+          8: 'сентября',
+          9: 'октября',
+          10: 'ноября',
+          11: 'декабря'
         };
 
         titleResult.textContent = 'Вы выбрали игру';
