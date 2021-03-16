@@ -54,34 +54,38 @@
   var locationPopupOpen = document.querySelector('.contacts__item--location');
   var locationPopupClose = document.querySelector('.popup--location .popup__close');
 
-  var locationPopupEscPress = function (evt) {
-    if (evt.key === 'Escape') {
-      locationPopupCloseClickHandler();
-    }
-  };
+  if (locationPopupOpen) {
+    var locationPopupEscPress = function (evt) {
+      if (evt.key === 'Escape') {
+        locationPopupCloseClickHandler();
+      }
+    };
 
-  var locationPopupOpenClickHandler = function () {
-    pageBody.classList.add('page-body--popup');
-    locationPopup.classList.remove('popup--hidden');
-    locationPopupClose.addEventListener('click', function () {
-      locationPopupCloseClickHandler();
-    });
-    locationPopup.querySelector('.popup__close').focus();
-    document.addEventListener('keydown', locationPopupEscPress);
-    overlay.addEventListener('click', locationPopupCloseClickHandler);
-  };
+    var locationPopupOpenClickHandler = function () {
+      pageBody.classList.add('page-body--popup');
+      locationPopup.classList.remove('popup--hidden');
+      locationPopupClose.addEventListener('click', function () {
+        locationPopupCloseClickHandler();
+      });
+      locationPopup.querySelector('.popup__close').focus();
+      document.addEventListener('keydown', locationPopupEscPress);
+      overlay.addEventListener('click', locationPopupCloseClickHandler);
+    };
 
-  var locationPopupCloseClickHandler = function () {
-    pageBody.classList.remove('page-body--popup');
-    locationPopup.classList.add('popup--hidden');
-    document.removeEventListener('keydown', locationPopupEscPress);
-    locationPopupClose.removeEventListener('click', function () {
-      locationPopupCloseClickHandler();
-    });
-    overlay.removeEventListener('click', locationPopupCloseClickHandler);
-  };
+    var locationPopupCloseClickHandler = function () {
+      pageBody.classList.remove('page-body--popup');
+      locationPopup.classList.add('popup--hidden');
+      document.removeEventListener('keydown', locationPopupEscPress);
+      locationPopupClose.removeEventListener('click', function () {
+        locationPopupCloseClickHandler();
+      });
+      overlay.removeEventListener('click', locationPopupCloseClickHandler);
+    };
 
-  locationPopupOpen.addEventListener('click', locationPopupOpenClickHandler);
+    locationPopupOpen.addEventListener('click', locationPopupOpenClickHandler);
+  }
+
+
 })();
 
 (function () {
@@ -97,181 +101,186 @@
   var feedbackSubmitButton = document.querySelector('.button--feedback');
   var feedbackPopup = document.querySelector('.popup--feedback');
 
-  var clearInputs = function () {
-    userNameInput.value = '';
-    userEmailInput.value = '';
-  };
+  if (feedbackPopupOpen) {
+    var clearInputs = function () {
+      userNameInput.value = '';
+      userEmailInput.value = '';
+    };
 
-  var clearInputClasses = function (el) {
-    el.classList.remove('inputfeelds__input-wrapper--success');
-    el.classList.remove('inputfeelds__input-wrapper--error');
-  };
+    var clearInputClasses = function (el) {
+      el.classList.remove('inputfeelds__input-wrapper--success');
+      el.classList.remove('inputfeelds__input-wrapper--error');
+    };
 
-  var feedbackPopupEscPress = function (evt) {
-    if (evt.key === 'Escape') {
-      feedbackPopupCloseClickHandler();
-    }
-  };
+    var feedbackPopupEscPress = function (evt) {
+      if (evt.key === 'Escape') {
+        feedbackPopupCloseClickHandler();
+      }
+    };
 
-  var feedbackPopupOpenClickHandler = function () {
-    clearInputs();
-    clearInputClasses(inputWrappers[0]);
-    clearInputClasses(inputWrappers[1]);
-    feedbackSubmitButton.disabled = true;
-    pageBody.classList.add('page-body--popup');
-    feedbackPopup.classList.remove('popup--hidden');
-    feedbackPopupClose.addEventListener('click', function () {
-      feedbackPopupCloseClickHandler();
-    });
-    feedbackPopup.querySelector('.popup__close').focus();
-    document.addEventListener('keydown', feedbackPopupEscPress);
-    overlay.addEventListener('click', feedbackPopupCloseClickHandler);
-    userNameInput.focus();
-  };
+    var feedbackPopupOpenClickHandler = function () {
+      clearInputs();
+      clearInputClasses(inputWrappers[0]);
+      clearInputClasses(inputWrappers[1]);
+      feedbackSubmitButton.disabled = true;
+      pageBody.classList.add('page-body--popup');
+      feedbackPopup.classList.remove('popup--hidden');
+      feedbackPopupClose.addEventListener('click', function () {
+        feedbackPopupCloseClickHandler();
+      });
+      feedbackPopup.querySelector('.popup__close').focus();
+      document.addEventListener('keydown', feedbackPopupEscPress);
+      overlay.addEventListener('click', feedbackPopupCloseClickHandler);
+      userNameInput.focus();
+    };
 
-  var feedbackPopupCloseClickHandler = function () {
-    pageBody.classList.remove('page-body--popup');
-    feedbackPopup.classList.add('popup--hidden');
-    document.removeEventListener('keydown', feedbackPopupEscPress);
-    feedbackPopupClose.removeEventListener('click', function () {
-      feedbackPopupCloseClickHandler();
-    });
-    overlay.removeEventListener('click', feedbackPopupCloseClickHandler);
-  };
+    var feedbackPopupCloseClickHandler = function () {
+      pageBody.classList.remove('page-body--popup');
+      feedbackPopup.classList.add('popup--hidden');
+      document.removeEventListener('keydown', feedbackPopupEscPress);
+      feedbackPopupClose.removeEventListener('click', function () {
+        feedbackPopupCloseClickHandler();
+      });
+      overlay.removeEventListener('click', feedbackPopupCloseClickHandler);
+    };
 
-  feedbackPopupOpen.addEventListener('click', feedbackPopupOpenClickHandler);
+    feedbackPopupOpen.addEventListener('click', feedbackPopupOpenClickHandler);
+  }
 
   // validation
-  var checkValidationFeedbackForm = function () {
+  if (feedbackPopup) {
+    var checkValidationFeedbackForm = function () {
 
-    // name
-    var minNameLength = 2;
-    var maxNameLength = 10;
-    var submitName = false;
+      // name
+      var minNameLength = 2;
+      var maxNameLength = 10;
+      var submitName = false;
 
-    var userNameInputHandler = function () {
-      var inputNameValue = userNameInput.value;
-      var inputNameArr = inputNameValue.split(' ');
+      var userNameInputHandler = function () {
+        var inputNameValue = userNameInput.value;
+        var inputNameArr = inputNameValue.split(' ');
 
-      var showNameError = function () {
-        userNameInput.setCustomValidity('');
-        clearInputClasses(inputWrappers[0]);
-        inputWrappers[0].classList.add('inputfeelds__input-wrapper--error');
-        submitName = false;
-      };
+        var showNameError = function () {
+          userNameInput.setCustomValidity('');
+          clearInputClasses(inputWrappers[0]);
+          inputWrappers[0].classList.add('inputfeelds__input-wrapper--error');
+          submitName = false;
+        };
 
-      var showNameSuccess = function () {
-        userNameInput.setCustomValidity('');
-        clearInputClasses(inputWrappers[0]);
-        inputWrappers[0].classList.add('inputfeelds__input-wrapper--success');
-        inputMsgs[0].textContent = '';
-        submitName = true;
-      };
+        var showNameSuccess = function () {
+          userNameInput.setCustomValidity('');
+          clearInputClasses(inputWrappers[0]);
+          inputWrappers[0].classList.add('inputfeelds__input-wrapper--success');
+          inputMsgs[0].textContent = '';
+          submitName = true;
+        };
 
-      var simbolsArray = ['#', '@', '$', '<', '>', '%', '.', '!', '?', '"', '\'', '&', '|', '\\', '§', '¶', '+', '-', '=', '*', ',', '/'];
+        var simbolsArray = ['#', '@', '$', '<', '>', '%', '.', '!', '?', '"', '\'', '&', '|', '\\', '§', '¶', '+', '-', '=', '*', ',', '/'];
 
-      var checkAvailability = function (arr, val) {
-        return arr.some(function (arrVal) {
-          return val === arrVal;
-        });
-      };
+        var checkAvailability = function (arr, val) {
+          return arr.some(function (arrVal) {
+            return val === arrVal;
+          });
+        };
 
-      var checkValidationName = function (arrName) {
+        var checkValidationName = function (arrName) {
 
-        var wrongName = false;
+          var wrongName = false;
 
-        for (var index = 0; index < arrName.length; index++) {
-          var name = arrName[index];
+          for (var index = 0; index < arrName.length; index++) {
+            var name = arrName[index];
 
-          for (var simbolIndex = 0; simbolIndex < name.length; simbolIndex++) {
-            var simbol = name[simbolIndex];
-            var wrongSimbol = checkAvailability(simbolsArray, simbol);
+            for (var simbolIndex = 0; simbolIndex < name.length; simbolIndex++) {
+              var simbol = name[simbolIndex];
+              var wrongSimbol = checkAvailability(simbolsArray, simbol);
 
-            if (wrongSimbol) {
-              wrongName = true;
+              if (wrongSimbol) {
+                wrongName = true;
+              }
+            }
+
+            if (wrongName) {
+              showNameError();
+              inputMsgs[0].textContent = 'Имя не должно содержать спецсимволы (#, @, $ и т. п.), знаки пунктуации, эмодзи и т.п.';
+            } else if (name.length < minNameLength) {
+              showNameError();
+              inputMsgs[0].textContent = 'Имя должно состоять из 2-х и более символов';
+            } else if (name.length > maxNameLength) {
+              showNameError();
+              inputMsgs[0].textContent = 'Имя не должно быть длиннее 10 символов';
+            } else if (name.length === 0) {
+              showNameError();
+              inputMsgs[0].textContent = 'Вы ничего не ввели';
+            } else {
+              showNameSuccess();
             }
           }
+        };
 
-          if (wrongName) {
-            showNameError();
-            inputMsgs[0].textContent = 'Имя не должно содержать спецсимволы (#, @, $ и т. п.), знаки пунктуации, эмодзи и т.п.';
-          } else if (name.length < minNameLength) {
-            showNameError();
-            inputMsgs[0].textContent = 'Имя должно состоять из 2-х и более символов';
-          } else if (name.length > maxNameLength) {
-            showNameError();
-            inputMsgs[0].textContent = 'Имя не должно быть длиннее 10 символов';
-          } else if (name.length === 0) {
-            showNameError();
-            inputMsgs[0].textContent = 'Вы ничего не ввели';
-          } else {
-            showNameSuccess();
-          }
-        }
-      };
+        checkValidationName(inputNameArr);
 
-      checkValidationName(inputNameArr);
-
-      if (submitName && submitEmail) {
-        feedbackSubmitButton.disabled = false;
-      } else {
-        feedbackSubmitButton.disabled = true;
-      }
-    };
-
-    userNameInput.addEventListener('input', userNameInputHandler);
-
-    // email
-    var submitEmail = false;
-
-    var userEmailInputHandler = function () {
-      var inputEmailValue = userEmailInput.value;
-
-      var showEmailError = function () {
-        userEmailInput.setCustomValidity('');
-        inputMsgs[1].textContent = 'Введён некорректный e-mail, попробуйте заново';
-        clearInputClasses(inputWrappers[1]);
-        inputWrappers[1].classList.add('inputfeelds__input-wrapper--error');
-      };
-
-      var showEmailSuccess = function () {
-        userEmailInput.setCustomValidity('');
-        clearInputClasses(inputWrappers[1]);
-        inputWrappers[1].classList.add('inputfeelds__input-wrapper--success');
-        inputMsgs[1].textContent = '';
-      };
-
-      var checkValidationEmail = function (arrEmail) {
-
-        submitEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(arrEmail);
-
-        if (submitEmail) {
-          showEmailSuccess();
+        if (submitName && submitEmail) {
+          feedbackSubmitButton.disabled = false;
         } else {
-          showEmailError();
+          feedbackSubmitButton.disabled = true;
         }
       };
 
-      checkValidationEmail(inputEmailValue);
+      userNameInput.addEventListener('input', userNameInputHandler);
 
-      if (submitName && submitEmail) {
-        feedbackSubmitButton.disabled = false;
-      } else {
-        feedbackSubmitButton.disabled = true;
-      }
+      // email
+      var submitEmail = false;
+
+      var userEmailInputHandler = function () {
+        var inputEmailValue = userEmailInput.value;
+
+        var showEmailError = function () {
+          userEmailInput.setCustomValidity('');
+          inputMsgs[1].textContent = 'Введён некорректный e-mail, попробуйте заново';
+          clearInputClasses(inputWrappers[1]);
+          inputWrappers[1].classList.add('inputfeelds__input-wrapper--error');
+        };
+
+        var showEmailSuccess = function () {
+          userEmailInput.setCustomValidity('');
+          clearInputClasses(inputWrappers[1]);
+          inputWrappers[1].classList.add('inputfeelds__input-wrapper--success');
+          inputMsgs[1].textContent = '';
+        };
+
+        var checkValidationEmail = function (arrEmail) {
+
+          submitEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(arrEmail);
+
+          if (submitEmail) {
+            showEmailSuccess();
+          } else {
+            showEmailError();
+          }
+        };
+
+        checkValidationEmail(inputEmailValue);
+
+        if (submitName && submitEmail) {
+          feedbackSubmitButton.disabled = false;
+        } else {
+          feedbackSubmitButton.disabled = true;
+        }
+      };
+
+      userEmailInput.addEventListener('input', userEmailInputHandler);
     };
 
-    userEmailInput.addEventListener('input', userEmailInputHandler);
-  };
+    checkValidationFeedbackForm();
 
-  checkValidationFeedbackForm();
+    // локалСторадж
+    feedbackForm.addEventListener('submit', function () {
+      localStorage.clear();
+      localStorage.setItem('name', userNameInput.value);
+      localStorage.setItem('email', userEmailInput.value);
+    });
+  }
 
-  // локалСторадж
-  feedbackForm.addEventListener('submit', function () {
-    localStorage.clear();
-    localStorage.setItem('name', userNameInput.value);
-    localStorage.setItem('email', userEmailInput.value);
-  });
 })();
 
 (function () {
