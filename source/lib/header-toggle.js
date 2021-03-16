@@ -1,3 +1,4 @@
+'use strict';
 (function () {
   var pageBody = document.querySelector('.page-body');
   var pageHeader = document.querySelector('.page-header');

@@ -1,66 +1,61 @@
 (function () {
   var pageBody = document.querySelector('.page-body');
-  var feedbackForm = document.querySelector('.form--feadback');
+  var feedbackForm = document.querySelector('.form--feedback');
   var inputWrappers = document.querySelectorAll('.inputfealds__input-wrapper');
   var userNameInput = document.querySelector('#user-name');
   var userEmailInput = document.querySelector('#user-email');
-  var inputMsgs = document.querySelectorAll('.inputfields__item--feadback span');
+  var inputMsgs = document.querySelectorAll('.inputfields__item--feedback span');
   var overlay = document.querySelector('.overlay');
-  var feadbackPopupButton = document.querySelector('.page-footer__question');
-  var feadbackSubmitButton = document.querySelector('.button--feadback');
-  var feadbackPopup = document.querySelector('.popup--feadback');
+  var feedbackPopupButton = document.querySelector('.page-footer__question');
+  var feedbackSubmitButton = document.querySelector('.button--feedback');
+  var feedbackPopup = document.querySelector('.popup--feedback');
 
   var clearInputs = function () {
     userNameInput.value = '';
     userEmailInput.value = '';
   };
 
-  var clearNameClasses = function () {
-    inputWrappers[0].classList.remove('inputfealds__input-wrapper--success');
-    inputWrappers[0].classList.remove('inputfealds__input-wrapper--error');
+  var clearInputClasses = function (el) {
+    el.classList.remove('inputfealds__input-wrapper--success');
+    el.classList.remove('inputfealds__input-wrapper--error');
   };
 
-  var clearEmailClasses = function () {
-    inputWrappers[1].classList.remove('inputfealds__input-wrapper--success');
-    inputWrappers[1].classList.remove('inputfealds__input-wrapper--error');
-  };
-
-  var feadbackPopupEscPress = function (evt) {
+  var feedbackPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
-      closeFeadbackPopup();
+      closeFeedbackPopup();
     }
   };
 
-  var openFeadbackPopup = function () {
+  var openFeedbackPopup = function () {
     clearInputs();
-    clearNameClasses();
-    clearEmailClasses();
-    feadbackSubmitButton.disabled = true;
+    clearInputClasses(inputWrappers[0]);
+    clearInputClasses(inputWrappers[1]);
+    feedbackSubmitButton.disabled = true;
     pageBody.classList.add('page-body--popup');
-    feadbackPopup.classList.remove('popup--hidden');
-    feadbackPopup.querySelector('.popup__close').addEventListener('click', function () {
-      closeFeadbackPopup();
+    feedbackPopup.classList.remove('popup--hidden');
+    feedbackPopup.querySelector('.popup__close').addEventListener('click', function () {
+      closeFeedbackPopup();
     });
-    feadbackPopup.querySelector('.popup__close').focus();
-    document.addEventListener('keydown', feadbackPopupEscPress);
-    overlay.addEventListener('click', closeFeadbackPopup);
+    feedbackPopup.querySelector('.popup__close').focus();
+    document.addEventListener('keydown', feedbackPopupEscPress);
+    overlay.addEventListener('click', closeFeedbackPopup);
     userNameInput.focus();
   };
 
-  var closeFeadbackPopup = function () {
+  var closeFeedbackPopup = function () {
     pageBody.classList.remove('page-body--popup');
-    feadbackPopup.classList.add('popup--hidden');
-    document.removeEventListener('keydown', feadbackPopupEscPress);
-    feadbackPopup.querySelector('.popup__close').removeEventListener('click', function () {
-      closeFeadbackPopup();
+    feedbackPopup.classList.add('popup--hidden');
+    document.removeEventListener('keydown', feedbackPopupEscPress);
+    feedbackPopup.querySelector('.popup__close').removeEventListener('click', function () {
+      closeFeedbackPopup();
     });
-    overlay.removeEventListener('click', closeFeadbackPopup);
+    overlay.removeEventListener('click', closeFeedbackPopup);
   };
 
-  feadbackPopupButton.addEventListener('click', openFeadbackPopup);
+  feedbackPopupButton.addEventListener('click', openFeedbackPopup);
 
   // validation
-  var checkValidationFeadbackForm = function () {
+  var checkValidationFeedbackForm = function () {
     var minNameLength = 2;
     var maxNameLength = 10;
 
@@ -73,14 +68,14 @@
 
       var showNameError = function () {
         userNameInput.setCustomValidity('');
-        clearNameClasses();
+        clearInputClasses(inputWrappers[0]);
         inputWrappers[0].classList.add('inputfealds__input-wrapper--error');
         submitName = false;
       };
 
       var showNameSuccess = function () {
         userNameInput.setCustomValidity('');
-        clearNameClasses();
+        clearInputClasses(inputWrappers[0]);
         inputWrappers[0].classList.add('inputfealds__input-wrapper--success');
         inputMsgs[0].textContent = '';
         submitName = true;
@@ -111,11 +106,15 @@
       };
 
       checkValidationName(inputNameArr);
+
       if (submitName && submitEmail) {
-        feadbackSubmitButton.disabled = false;
+        feedbackSubmitButton.disabled = false;
       } else {
-        feadbackSubmitButton.disabled = true;
+        feedbackSubmitButton.disabled = true;
       }
+
+      // feedbackSubmitButton.disabled = !Boolean(submitName && submitEmail);
+
     });
 
     // email
@@ -128,13 +127,13 @@
       var showEmailError = function () {
         userEmailInput.setCustomValidity('');
         inputMsgs[1].textContent = 'Введён некорректный e-mail, попробуйте заново';
-        clearEmailClasses();
+        clearInputClasses(inputWrappers[1]);
         inputWrappers[1].classList.add('inputfealds__input-wrapper--error');
       };
 
       var showEmailSuccess = function () {
         userEmailInput.setCustomValidity('');
-        clearEmailClasses();
+        clearInputClasses(inputWrappers[1]);
         inputWrappers[1].classList.add('inputfealds__input-wrapper--success');
         inputMsgs[1].textContent = '';
       };
@@ -151,15 +150,18 @@
       };
 
       checkValidationEmail(inputEmailValue);
+
       if (submitName && submitEmail) {
-        feadbackSubmitButton.disabled = false;
+        feedbackSubmitButton.disabled = false;
       } else {
-        feadbackSubmitButton.disabled = true;
+        feedbackSubmitButton.disabled = true;
       }
+
+      // feedbackSubmitButton.disabled = !Boolean(submitName && submitEmail);
     });
   };
 
-  checkValidationFeadbackForm();
+  checkValidationFeedbackForm();
 
   // локалСторадж
   feedbackForm.addEventListener('submit', function () {

@@ -1,3 +1,4 @@
+'use strict';
 (function () {
   var pageBody = document.querySelector('.page-body');
   var pageHeader = document.querySelector('.page-header');
@@ -84,67 +85,62 @@
 
 (function () {
   var pageBody = document.querySelector('.page-body');
-  var feedbackForm = document.querySelector('.form--feadback');
+  var feedbackForm = document.querySelector('.form--feedback');
   var inputWrappers = document.querySelectorAll('.inputfealds__input-wrapper');
   var userNameInput = document.querySelector('#user-name');
   var userEmailInput = document.querySelector('#user-email');
-  var inputMsgs = document.querySelectorAll('.inputfields__item--feadback span');
+  var inputMsgs = document.querySelectorAll('.inputfields__item--feedback span');
   var overlay = document.querySelector('.overlay');
-  var feadbackPopupButton = document.querySelector('.page-footer__question');
-  var feadbackSubmitButton = document.querySelector('.button--feadback');
-  var feadbackPopup = document.querySelector('.popup--feadback');
+  var feedbackPopupButton = document.querySelector('.page-footer__question');
+  var feedbackSubmitButton = document.querySelector('.button--feedback');
+  var feedbackPopup = document.querySelector('.popup--feedback');
 
   var clearInputs = function () {
     userNameInput.value = '';
     userEmailInput.value = '';
   };
 
-  var clearNameClasses = function () {
-    inputWrappers[0].classList.remove('inputfealds__input-wrapper--success');
-    inputWrappers[0].classList.remove('inputfealds__input-wrapper--error');
+  var clearInputClasses = function (el) {
+    el.classList.remove('inputfealds__input-wrapper--success');
+    el.classList.remove('inputfealds__input-wrapper--error');
   };
 
-  var clearEmailClasses = function () {
-    inputWrappers[1].classList.remove('inputfealds__input-wrapper--success');
-    inputWrappers[1].classList.remove('inputfealds__input-wrapper--error');
-  };
-
-  var feadbackPopupEscPress = function (evt) {
+  var feedbackPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
-      closeFeadbackPopup();
+      closeFeedbackPopup();
     }
   };
 
-  var openFeadbackPopup = function () {
+  var openFeedbackPopup = function () {
     clearInputs();
-    clearNameClasses();
-    clearEmailClasses();
-    feadbackSubmitButton.disabled = true;
+    clearInputClasses(inputWrappers[0]);
+    clearInputClasses(inputWrappers[1]);
+    feedbackSubmitButton.disabled = true;
     pageBody.classList.add('page-body--popup');
-    feadbackPopup.classList.remove('popup--hidden');
-    feadbackPopup.querySelector('.popup__close').addEventListener('click', function () {
-      closeFeadbackPopup();
+    feedbackPopup.classList.remove('popup--hidden');
+    feedbackPopup.querySelector('.popup__close').addEventListener('click', function () {
+      closeFeedbackPopup();
     });
-    feadbackPopup.querySelector('.popup__close').focus();
-    document.addEventListener('keydown', feadbackPopupEscPress);
-    overlay.addEventListener('click', closeFeadbackPopup);
+    feedbackPopup.querySelector('.popup__close').focus();
+    document.addEventListener('keydown', feedbackPopupEscPress);
+    overlay.addEventListener('click', closeFeedbackPopup);
     userNameInput.focus();
   };
 
-  var closeFeadbackPopup = function () {
+  var closeFeedbackPopup = function () {
     pageBody.classList.remove('page-body--popup');
-    feadbackPopup.classList.add('popup--hidden');
-    document.removeEventListener('keydown', feadbackPopupEscPress);
-    feadbackPopup.querySelector('.popup__close').removeEventListener('click', function () {
-      closeFeadbackPopup();
+    feedbackPopup.classList.add('popup--hidden');
+    document.removeEventListener('keydown', feedbackPopupEscPress);
+    feedbackPopup.querySelector('.popup__close').removeEventListener('click', function () {
+      closeFeedbackPopup();
     });
-    overlay.removeEventListener('click', closeFeadbackPopup);
+    overlay.removeEventListener('click', closeFeedbackPopup);
   };
 
-  feadbackPopupButton.addEventListener('click', openFeadbackPopup);
+  feedbackPopupButton.addEventListener('click', openFeedbackPopup);
 
   // validation
-  var checkValidationFeadbackForm = function () {
+  var checkValidationFeedbackForm = function () {
     var minNameLength = 2;
     var maxNameLength = 10;
 
@@ -157,14 +153,14 @@
 
       var showNameError = function () {
         userNameInput.setCustomValidity('');
-        clearNameClasses();
+        clearInputClasses(inputWrappers[0]);
         inputWrappers[0].classList.add('inputfealds__input-wrapper--error');
         submitName = false;
       };
 
       var showNameSuccess = function () {
         userNameInput.setCustomValidity('');
-        clearNameClasses();
+        clearInputClasses(inputWrappers[0]);
         inputWrappers[0].classList.add('inputfealds__input-wrapper--success');
         inputMsgs[0].textContent = '';
         submitName = true;
@@ -195,11 +191,15 @@
       };
 
       checkValidationName(inputNameArr);
+
       if (submitName && submitEmail) {
-        feadbackSubmitButton.disabled = false;
+        feedbackSubmitButton.disabled = false;
       } else {
-        feadbackSubmitButton.disabled = true;
+        feedbackSubmitButton.disabled = true;
       }
+
+      // feedbackSubmitButton.disabled = !Boolean(submitName && submitEmail);
+
     });
 
     // email
@@ -212,13 +212,13 @@
       var showEmailError = function () {
         userEmailInput.setCustomValidity('');
         inputMsgs[1].textContent = 'Введён некорректный e-mail, попробуйте заново';
-        clearEmailClasses();
+        clearInputClasses(inputWrappers[1]);
         inputWrappers[1].classList.add('inputfealds__input-wrapper--error');
       };
 
       var showEmailSuccess = function () {
         userEmailInput.setCustomValidity('');
-        clearEmailClasses();
+        clearInputClasses(inputWrappers[1]);
         inputWrappers[1].classList.add('inputfealds__input-wrapper--success');
         inputMsgs[1].textContent = '';
       };
@@ -235,15 +235,18 @@
       };
 
       checkValidationEmail(inputEmailValue);
+
       if (submitName && submitEmail) {
-        feadbackSubmitButton.disabled = false;
+        feedbackSubmitButton.disabled = false;
       } else {
-        feadbackSubmitButton.disabled = true;
+        feedbackSubmitButton.disabled = true;
       }
+
+      // feedbackSubmitButton.disabled = !Boolean(submitName && submitEmail);
     });
   };
 
-  checkValidationFeadbackForm();
+  checkValidationFeedbackForm();
 
   // локалСторадж
   feedbackForm.addEventListener('submit', function () {
@@ -285,12 +288,12 @@
       var dateLabel = document.querySelector('.form__calendar');
       var formTime = document.querySelector('.form__time');
 
-      calendar.addEventListener('pickmeup-change', function (e) {
-        var choosenDate = e.detail.formatted_date;
-        var date = Number(choosenDate[8] + choosenDate[9]);
-        var month = Number(choosenDate[5] + choosenDate[6]);
+      calendar.addEventListener('pickmeup-change', function (evt) {
+        var chosenDate = evt.detail.formatted_date;
+        var date = Number(chosenDate[8] + chosenDate[9]);
+        var month = Number(chosenDate[5] + chosenDate[6]);
 
-        var monthName = {
+        var monthNumberToName = {
           1: 'января',
           2: 'февраля',
           3: 'марта',
@@ -306,9 +309,9 @@
         };
 
         titleResult.textContent = 'Вы выбрали игру';
-        dateInput.value = choosenDate;
-        dateLabel.textContent = date + ' ' + monthName[month];
-        dateResult.textContent = date + ' ' + monthName[month];
+        dateInput.value = chosenDate;
+        dateLabel.textContent = date + ' ' + monthNumberToName[month];
+        dateResult.textContent = date + ' ' + monthNumberToName[month];
         window.pickmeup('.date').hide();
         formTime.classList.add('form__time--visible');
 
@@ -332,65 +335,10 @@
       }
     };
 
-    var element = formRadioItems[0];
-    var element1 = formRadioItems[1];
-    var element2 = formRadioItems[2];
-    var element3 = formRadioItems[3];
-    var element4 = formRadioItems[4];
-    var element5 = formRadioItems[5];
-    var element6 = formRadioItems[6];
-    var element7 = formRadioItems[7];
-    var element8 = formRadioItems[8];
-    var element9 = formRadioItems[9];
-    var element10 = formRadioItems[10];
-    var element11 = formRadioItems[11];
-
-    element.addEventListener('click', function () {
-      renderInfo(element);
-    });
-
-    element1.addEventListener('click', function () {
-      renderInfo(element1);
-    });
-
-    element2.addEventListener('click', function () {
-      renderInfo(element2);
-    });
-
-    element3.addEventListener('click', function () {
-      renderInfo(element3);
-    });
-
-    element4.addEventListener('click', function () {
-      renderInfo(element4);
-    });
-
-    element5.addEventListener('click', function () {
-      renderInfo(element5);
-    });
-
-    element6.addEventListener('click', function () {
-      renderInfo(element6);
-    });
-
-    element7.addEventListener('click', function () {
-      renderInfo(element7);
-    });
-
-    element8.addEventListener('click', function () {
-      renderInfo(element8);
-    });
-
-    element9.addEventListener('click', function () {
-      renderInfo(element9);
-    });
-
-    element10.addEventListener('click', function () {
-      renderInfo(element10);
-    });
-
-    element11.addEventListener('click', function () {
-      renderInfo(element11);
+    formRadioItems.forEach(function (el) {
+      el.addEventListener('click', function () {
+        renderInfo(el);
+      });
     });
   }
 

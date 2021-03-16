@@ -30,12 +30,12 @@
       var dateLabel = document.querySelector('.form__calendar');
       var formTime = document.querySelector('.form__time');
 
-      calendar.addEventListener('pickmeup-change', function (e) {
-        var choosenDate = e.detail.formatted_date;
-        var date = Number(choosenDate[8] + choosenDate[9]);
-        var month = Number(choosenDate[5] + choosenDate[6]);
+      calendar.addEventListener('pickmeup-change', function (evt) {
+        var chosenDate = evt.detail.formatted_date;
+        var date = Number(chosenDate[8] + chosenDate[9]);
+        var month = Number(chosenDate[5] + chosenDate[6]);
 
-        var monthName = {
+        var monthNumberToName = {
           1: 'января',
           2: 'февраля',
           3: 'марта',
@@ -51,9 +51,9 @@
         };
 
         titleResult.textContent = 'Вы выбрали игру';
-        dateInput.value = choosenDate;
-        dateLabel.textContent = date + ' ' + monthName[month];
-        dateResult.textContent = date + ' ' + monthName[month];
+        dateInput.value = chosenDate;
+        dateLabel.textContent = date + ' ' + monthNumberToName[month];
+        dateResult.textContent = date + ' ' + monthNumberToName[month];
         window.pickmeup('.date').hide();
         formTime.classList.add('form__time--visible');
 
@@ -77,65 +77,10 @@
       }
     };
 
-    var element = formRadioItems[0];
-    var element1 = formRadioItems[1];
-    var element2 = formRadioItems[2];
-    var element3 = formRadioItems[3];
-    var element4 = formRadioItems[4];
-    var element5 = formRadioItems[5];
-    var element6 = formRadioItems[6];
-    var element7 = formRadioItems[7];
-    var element8 = formRadioItems[8];
-    var element9 = formRadioItems[9];
-    var element10 = formRadioItems[10];
-    var element11 = formRadioItems[11];
-
-    element.addEventListener('click', function () {
-      renderInfo(element);
-    });
-
-    element1.addEventListener('click', function () {
-      renderInfo(element1);
-    });
-
-    element2.addEventListener('click', function () {
-      renderInfo(element2);
-    });
-
-    element3.addEventListener('click', function () {
-      renderInfo(element3);
-    });
-
-    element4.addEventListener('click', function () {
-      renderInfo(element4);
-    });
-
-    element5.addEventListener('click', function () {
-      renderInfo(element5);
-    });
-
-    element6.addEventListener('click', function () {
-      renderInfo(element6);
-    });
-
-    element7.addEventListener('click', function () {
-      renderInfo(element7);
-    });
-
-    element8.addEventListener('click', function () {
-      renderInfo(element8);
-    });
-
-    element9.addEventListener('click', function () {
-      renderInfo(element9);
-    });
-
-    element10.addEventListener('click', function () {
-      renderInfo(element10);
-    });
-
-    element11.addEventListener('click', function () {
-      renderInfo(element11);
+    formRadioItems.forEach(function (el) {
+      el.addEventListener('click', function () {
+        renderInfo(el);
+      });
     });
   }
 
