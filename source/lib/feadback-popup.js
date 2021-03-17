@@ -158,8 +158,6 @@
 
           submitEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(arrEmail);
 
-          console.log(submitName && submitEmail);
-
           if (submitEmail) {
             showEmailSuccess();
           } else {
@@ -171,8 +169,6 @@
 
         feedbackSubmitButton.disabled = !(submitName && submitEmail);
       };
-
-
 
       userEmailInput.addEventListener('input', userEmailInputHandler);
     };
