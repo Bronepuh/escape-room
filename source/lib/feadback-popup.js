@@ -54,7 +54,10 @@
       overlay.removeEventListener('click', feedbackPopupCloseClickHandler);
     };
 
-    feedbackPopupOpen.addEventListener('click', feedbackPopupOpenClickHandler);
+    feedbackPopupOpen.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      feedbackPopupOpenClickHandler();
+    });
   }
 
   // validation

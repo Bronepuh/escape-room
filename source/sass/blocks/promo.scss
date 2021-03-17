@@ -15,7 +15,8 @@
   align-content: flex-start;
   width: 765px;
   margin: auto 0;
-  padding-bottom: 30px;
+  padding-top: 70px;
+  padding-bottom: 100px;
   padding-right: 86px;
 
   @media (max-width: $desktop-width) {
@@ -62,7 +63,7 @@
       left: 0;
       width: 8px;
       height: 100%;
-      background-image: url("../img/icon-arrow-left.svg");
+      background-image: url("/img/icon-arrow-left.svg");
       background-repeat: no-repeat;
       background-size: contain;
       background-position-y: 2px;
@@ -176,7 +177,7 @@
   }
 
   &--clock::before {
-    background-image: url("../img/icon-clock.svg");
+    background-image: url("/img/icon-clock.svg");
 
     @media (max-width: $tablet-width) {
       left: 23px;
@@ -185,7 +186,7 @@
 
   &--person {
     &::before {
-      background-image: url("../img/icon-person.svg");
+      background-image: url("/img/icon-person.svg");
 
       @media (max-width: $tablet-width) {
         left: 24px;
@@ -199,7 +200,7 @@
 
   &--difficult {
     &::before {
-      background-image: url("../img/icon-puzzle.svg");
+      background-image: url("/img/icon-puzzle.svg");
 
       @media (max-width: $tablet-width) {
         left: 23px;
@@ -293,7 +294,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("../img/promo-radial-bg.webp");
+      background-image: url("/img/promo-radial-bg.webp");
       background-repeat: no-repeat;
       background-size: cover;
       z-index: -1;

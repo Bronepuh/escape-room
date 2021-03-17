@@ -40,13 +40,13 @@
 
   &--insta {
     &::before {
-      background-image: url("../img/icon-insta.svg");
+      background-image: url("/img/icon-insta.svg");
     }
 
     &:hover,
     &:focus {
       &::before {
-        background-image: url("../img/icon-insta-hover.svg");
+        background-image: url("/img/icon-insta-hover.svg");
       }
     }
 
@@ -57,13 +57,13 @@
 
   &--vk {
     &::before {
-      background-image: url("../img/icon-vk.svg");
+      background-image: url("/img/icon-vk.svg");
     }
 
     &:hover,
     &:focus {
       &::before {
-        background-image: url("../img/icon-vk-hover.svg");
+        background-image: url("/img/icon-vk-hover.svg");
       }
     }
 

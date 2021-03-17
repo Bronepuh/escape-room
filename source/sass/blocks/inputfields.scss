@@ -156,7 +156,7 @@
       content: "";
       width: 8px;
       height: 8px;
-      background-image: url("../../img/icon-ok.svg");
+      background-image: url("/img/icon-ok.svg");
       background-repeat: no-repeat;
       background-size: contain;
 
@@ -214,13 +214,20 @@
       background: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
     }
 
-    input[type="radio"]:disabled ~ label {
-      border: none;
-      background: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
-    }
-
     input[type="radio"]:focus ~ label {
       background: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
+      border: 2px solid $basic-hover;
+    }
+
+    input[type="radio"]:hover ~ label {
+      border: 2px solid $basic-hover;
+      cursor: pointer;
+    }
+
+    input[type="radio"]:disabled ~ label {
+      border: none;
+      cursor: default;
+      background: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
     }
 
     span {

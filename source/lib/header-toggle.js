@@ -8,18 +8,26 @@
   var menuItems = document.querySelectorAll('.navigation__item');
 
   if (pageHeader) {
+    pageBody.classList.remove('page-body--nojs');
     pageHeader.classList.remove('page-header--nojs');
     pageFooter.classList.remove('page-footer--nojs');
     pageHeader.classList.add('page-header--closed');
   }
 
   if (pageHeader && pageBody) {
+    var headerToggleEscPress = function (evt) {
+      if (evt.key === 'Escape') {
+        closeMenu();
+      }
+    };
+
     var openMenu = function () {
       pageHeader.classList.remove('page-header--closed');
       pageHeader.classList.add('page-header--opened');
       pageFooter.classList.add('page-footer--visible');
       pageFooter.classList.add('page-footer--absolute');
       pageMain.classList.add('visually-hidden');
+      document.addEventListener('keydown', headerToggleEscPress);
     };
 
     var closeMenu = function () {
@@ -28,6 +36,7 @@
       pageFooter.classList.remove('page-footer--visible');
       pageFooter.classList.remove('page-footer--absolute');
       pageMain.classList.remove('visually-hidden');
+      document.removeEventListener('keydown', headerToggleEscPress);
     };
 
     var headerToggleClickHandler = function () {

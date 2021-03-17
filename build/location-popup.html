@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Escape room">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Escape room</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="page-body page-body--nojs">
+
+  <!-- location-popup -->
+  <div class="popup popup--location">
+    <div class="popup__body">
+      <h2 class="popup__title">
+        Ваш город:
+      </h2>
+      <div class="popup__location location">
+        <a class="location__detected" href="#">
+          Определить местоположение
+        </a>
+        <span class="location__detected-2">
+          ... или выберите вручную
+        </span>
+        <ul class="location__list">
+          <li class="location__item">
+            <a href="#" class="location__link location__link--active">Новосибирск</a>
+          </li>
+          <li class="location__item">
+            <a href="#" class="location__link">Иркутск</a>
+          </li>
+          <li class="location__item">
+            <a href="#" class="location__link">Смоленск</a>
+          </li>
+          <li class="location__item">
+            <a href="#" class="location__link">Волгоград</a>
+          </li>
+          <li class="location__item">
+            <a href="#" class="location__link">Комсомольск-на-Амуре</a>
+          </li>
+        </ul>
+        <button class="popup__close" type="button" aria-label="закрыть попап"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body__overlay overlay"></div>
+
+</body>
+
+</html>

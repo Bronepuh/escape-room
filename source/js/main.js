@@ -8,18 +8,26 @@
   var menuItems = document.querySelectorAll('.navigation__item');
 
   if (pageHeader) {
+    pageBody.classList.remove('page-body--nojs');
     pageHeader.classList.remove('page-header--nojs');
     pageFooter.classList.remove('page-footer--nojs');
     pageHeader.classList.add('page-header--closed');
   }
 
   if (pageHeader && pageBody) {
+    var headerToggleEscPress = function (evt) {
+      if (evt.key === 'Escape') {
+        closeMenu();
+      }
+    };
+
     var openMenu = function () {
       pageHeader.classList.remove('page-header--closed');
       pageHeader.classList.add('page-header--opened');
       pageFooter.classList.add('page-footer--visible');
       pageFooter.classList.add('page-footer--absolute');
       pageMain.classList.add('visually-hidden');
+      document.addEventListener('keydown', headerToggleEscPress);
     };
 
     var closeMenu = function () {
@@ -28,6 +36,7 @@
       pageFooter.classList.remove('page-footer--visible');
       pageFooter.classList.remove('page-footer--absolute');
       pageMain.classList.remove('visually-hidden');
+      document.removeEventListener('keydown', headerToggleEscPress);
     };
 
     var headerToggleClickHandler = function () {
@@ -51,6 +60,7 @@
   var pageBody = document.querySelector('.page-body');
   var overlay = document.querySelector('.overlay');
   var locationPopup = document.querySelector('.popup--location');
+  var locationPopupFirstItem = document.querySelector('.location__detected');
   var locationPopupOpen = document.querySelector('.contacts__item--location');
   var locationPopupClose = document.querySelector('.popup--location .popup__close');
 
@@ -67,9 +77,9 @@
       locationPopupClose.addEventListener('click', function () {
         locationPopupCloseClickHandler();
       });
-      locationPopup.querySelector('.popup__close').focus();
       document.addEventListener('keydown', locationPopupEscPress);
       overlay.addEventListener('click', locationPopupCloseClickHandler);
+      locationPopupFirstItem.focus();
     };
 
     var locationPopupCloseClickHandler = function () {
@@ -82,7 +92,10 @@
       overlay.removeEventListener('click', locationPopupCloseClickHandler);
     };
 
-    locationPopupOpen.addEventListener('click', locationPopupOpenClickHandler);
+    locationPopupOpen.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      locationPopupOpenClickHandler();
+    });
   }
 
 
@@ -144,7 +157,10 @@
       overlay.removeEventListener('click', feedbackPopupCloseClickHandler);
     };
 
-    feedbackPopupOpen.addEventListener('click', feedbackPopupOpenClickHandler);
+    feedbackPopupOpen.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      feedbackPopupOpenClickHandler();
+    });
   }
 
   // validation

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body class="page-body">
+<body class="page-body page-body--nojs">
   <header class="page-header page-header--nojs page-header--bg">
     <div class="page-header__container">
       <a class="page-header__logo" href="index.html" >
@@ -42,7 +42,7 @@
       <div class="page-header__contacts contacts">
         <ul class="contacts__list">
           <li class="contacts__item contacts__item--location">
-            <a href="#">НОВОСИБИРСК</a>
+            <a href="feedback-popup.html">НОВОСИБИРСК</a>
           </li>
           <li class="contacts__item">
             <a href="tel:83832840160">8 (383) 284 01 60</a>
@@ -318,7 +318,7 @@
           </li>
         </ul>
       </div>
-      <button type="button" class="page-footer__question">Задать вопрос</button>
+      <a href="feedback-popup.html" class="page-footer__question">Задать вопрос</a>
     </div>
   </footer>
 
@@ -328,7 +328,6 @@
       <h2 class="popup__title">
         Ваш город:
       </h2>
-      <button class="popup__close" type="button" aria-label="закрыть попап"></button>
       <div class="popup__location location">
         <a class="location__detected" href="#">
           Определить местоположение
@@ -353,6 +352,7 @@
             <a href="#" class="location__link">Комсомольск-на-Амуре</a>
           </li>
         </ul>
+        <button class="popup__close" type="button" aria-label="закрыть попап"></button>
       </div>
     </div>
   </div>
@@ -362,7 +362,6 @@
     <h2 class="popup__title">
       Задайте вопрос
     </h2>
-    <button class="popup__close" type="button" aria-label="закрыть попап"></button>
     <form class="form form--feedback" action="https://echo.htmlacademy.ru" method="GET">
 
       <ul class="inputfeelds inputfeelds--feedback">
@@ -377,7 +376,7 @@
         </li>
         <li class="inputfeelds__item inputfeelds__item--feedback">
           <label for="user-email">
-            Чтобы вы получили ответ, оставьте ваш <br> e-mail
+            Чтобы вы получили ответ, оставьте ваш e-mail
           </label>
           <div class="inputfeelds__input-wrapper">
             <input type="email" id="user-email" name="email" placeholder="Email" required>
@@ -403,6 +402,7 @@
       </div>
       <button class="button button--feedback" type="submit">ОТПРАВИТЬ ВОПРОС</button>
     </form>
+    <button class="popup__close" type="button" aria-label="закрыть попап"></button>
   </div>
 
   <div class="page-body__overlay overlay"></div>

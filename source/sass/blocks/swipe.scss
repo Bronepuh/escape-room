@@ -66,11 +66,11 @@
     padding-left: 39px;
 
     &::before {
-      background-image: url("../img/icon-quests.svg");
+      background-image: url("/img/icon-quests.svg");
     }
 
     &:hover::before {
-      background-image: url("../img/icon-quests-hover.svg");
+      background-image: url("/img/icon-quests-hover.svg");
     }
 
     @media (max-width: $tablet-width) {
@@ -91,11 +91,11 @@
       left: 41px;
       width: 36px;
       height: 30px;
-      background-image: url("../img/icon-adventures.svg");
+      background-image: url("/img/icon-adventures.svg");
     }
 
     &:hover::before {
-      background-image: url("../img/icon-adventures-hover.svg");
+      background-image: url("/img/icon-adventures-hover.svg");
     }
 
     @media (max-width: $tablet-width) {
@@ -117,11 +117,11 @@
       left: 41px;
       width: 30px;
       height: 30px;
-      background-image: url("../img/icon-horrors.svg");
+      background-image: url("/img/icon-horrors.svg");
     }
 
     &:hover::before {
-      background-image: url("../img/icon-horrors-hover.svg");
+      background-image: url("/img/icon-horrors-hover.svg");
     }
 
     @media (max-width: $tablet-width) {
@@ -143,11 +143,11 @@
       left: 39px;
       width: 30px;
       height: 30px;
-      background-image: url("../img/icon-mystic.svg");
+      background-image: url("/img/icon-mystic.svg");
     }
 
     &:hover::before {
-      background-image: url("../img/icon-mystic-hover.svg");
+      background-image: url("/img/icon-mystic-hover.svg");
     }
 
     @media (max-width: $tablet-width) {
@@ -168,11 +168,11 @@
       left: 39px;
       width: 40px;
       height: 30px;
-      background-image: url("../img/icon-detective.svg");
+      background-image: url("/img/icon-detective.svg");
     }
 
     &:hover::before {
-      background-image: url("../img/icon-detective-hover.svg");
+      background-image: url("/img/icon-detective-hover.svg");
     }
 
     @media (max-width: $tablet-width) {
@@ -193,11 +193,11 @@
       left: 39px;
       width: 30px;
       height: 30px;
-      background-image: url("../img/icon-science.svg");
+      background-image: url("/img/icon-science.svg");
     }
 
     &:hover::before {
-      background-image: url("../img/icon-science-hover.svg");
+      background-image: url("/img/icon-science-hover.svg");
     }
 
     @media (max-width: $tablet-width) {
