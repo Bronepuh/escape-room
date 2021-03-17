@@ -219,11 +219,7 @@
 
         checkValidationName(inputNameArr);
 
-        if (submitName && submitEmail) {
-          feedbackSubmitButton.disabled = false;
-        } else {
-          feedbackSubmitButton.disabled = true;
-        }
+        feedbackSubmitButton.disabled = !(submitName && submitEmail);
       };
 
       userNameInput.addEventListener('input', userNameInputHandler);
@@ -252,6 +248,8 @@
 
           submitEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(arrEmail);
 
+          console.log(submitName && submitEmail);
+
           if (submitEmail) {
             showEmailSuccess();
           } else {
@@ -261,12 +259,10 @@
 
         checkValidationEmail(inputEmailValue);
 
-        if (submitName && submitEmail) {
-          feedbackSubmitButton.disabled = false;
-        } else {
-          feedbackSubmitButton.disabled = true;
-        }
+        feedbackSubmitButton.disabled = !(submitName && submitEmail);
       };
+
+
 
       userEmailInput.addEventListener('input', userEmailInputHandler);
     };
