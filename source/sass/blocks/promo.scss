@@ -37,40 +37,6 @@
   }
 }
 
-.promo__link {
-  display: none;
-
-  @media (max-width: $tablet-width) {
-    position: absolute;
-    top: 89px;
-    left: 15px;
-    display: flex;
-    align-items: center;
-    font-style: normal;
-    padding-left: 15px;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 144%;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    font-feature-settings: "pnum"on, "lnum"on;
-    color: $text-white;
-
-    &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      left: 0;
-      width: 8px;
-      height: 100%;
-      background-image: url("/img/icon-arrow-left.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position-y: 2px;
-    }
-  }
-}
-
 .promo span {
   display: flex;
   width: 100%;
@@ -177,7 +143,7 @@
   }
 
   &--clock::before {
-    background-image: url("/img/icon-clock.svg");
+    background-image: url("../img/icon-clock.svg");
 
     @media (max-width: $tablet-width) {
       left: 23px;
@@ -186,7 +152,7 @@
 
   &--person {
     &::before {
-      background-image: url("/img/icon-person.svg");
+      background-image: url("../img/icon-person.svg");
 
       @media (max-width: $tablet-width) {
         left: 24px;
@@ -200,7 +166,7 @@
 
   &--difficult {
     &::before {
-      background-image: url("/img/icon-puzzle.svg");
+      background-image: url("../img/icon-puzzle.svg");
 
       @media (max-width: $tablet-width) {
         left: 23px;
@@ -279,7 +245,7 @@
   width: 250px;
   height: 65px;
   text-decoration: none;
-  background-color: $darck-orange;
+  background-color: $dark-orange;
   border-radius: 65px;
   color: $text-white;
 }
@@ -294,7 +260,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("/img/promo-radial-bg.webp");
+      background-image: url("../img/promo-radial-bg.webp");
       background-repeat: no-repeat;
       background-size: cover;
       z-index: -1;

@@ -72,41 +72,6 @@
     opacity: 0.25;
   }
 
-  a {
-    display: none;
-    z-index: 1;
-
-    @media (max-width: $tablet-width) {
-      position: absolute;
-      top: -2px;
-      left: 0;
-      display: flex;
-      align-items: center;
-      font-style: normal;
-      padding-left: 15px;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 144%;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      font-feature-settings: "pnum"on, "lnum"on;
-      color: $text-white;
-
-      &::before {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 100%;
-        background-image: url("/img/icon-arrow-left.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position-y: 2px;
-      }
-    }
-  }
-
   span {
     &:nth-of-type(1) {
       display: flex;

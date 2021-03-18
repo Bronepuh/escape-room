@@ -51,7 +51,9 @@
   if (headerToggle) {
     headerToggle.addEventListener('click', headerToggleClickHandler);
     for (var i = 0; i < menuItems.length; i++) {
-      menuItems[i].addEventListener('click', closeMenu);
+      menuItems[i].addEventListener('click', function () {
+        closeMenu();
+      });
     }
   }
 })();

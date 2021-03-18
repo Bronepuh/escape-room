@@ -11,7 +11,7 @@
 </head>
 
 <body class="page-body page-body--nojs">
-  <header class="page-header page-header--nojs page-header--bg">
+  <header class="page-header page-header--nojs">
     <div class="page-header__container">
       <a class="page-header__logo" href="index.html">
         <span class="visually-hidden">Логотип</span>
@@ -23,34 +23,35 @@
       <nav class="page-header__navigation navigation">
         <ul class="navigation__list">
           <li class="navigation__item navigation__item--active">
-            <a href="choice.html">КВЕСТЫ</a>
+            <a class="link link--nav" href="choice.html">КВЕСТЫ</a>
           </li>
           <li class="navigation__item">
-            <a href="#">НОВИЧКАМ</a>
+            <a class="link link--nav" href="#">НОВИЧКАМ</a>
           </li>
           <li class="navigation__item">
-            <a href="#">ОТЗЫВЫ</a>
+            <a class="link link--nav" href="#">ОТЗЫВЫ</a>
           </li>
           <li class="navigation__item">
-            <a href="#">АКЦИИ</a>
+            <a class="link link--nav" href="#">АКЦИИ</a>
           </li>
           <li class="navigation__item">
-            <a href="#">КОНТАКТЫ</a>
+            <a class="link link--nav" href="#">КОНТАКТЫ</a>
           </li>
         </ul>
       </nav>
       <div class="page-header__contacts contacts">
         <ul class="contacts__list">
           <li class="contacts__item contacts__item--location">
-            <a href="feedback-popup.html">НОВОСИБИРСК</a>
+            <a class="link link--location" href="location-popup.html">НОВОСИБИРСК</a>
           </li>
           <li class="contacts__item">
-            <a href="tel:83832840160">8 (383) 284 01 60</a>
+            <a class="link link--contacts" href="tel:83832840160">8 (383) 284 01 60</a>
           </li>
         </ul>
       </div>
     </div>
   </header>
+
   <main class="page-main page-main--choice">
     <h1 class="visually-hidden">Escape room</h1>
 
@@ -60,22 +61,22 @@
         <h2 class="choice__title">Выберите тематику</h2>
         <div class="choice__swipe swipe">
           <ul class="swipe__list">
-            <li class="swipe__item swipe__item--active">
+            <li class="swipe__item swipe__item--quests swipe__item--active">
               <a href="#">Все квесты</a>
             </li>
-            <li class="swipe__item">
+            <li class="swipe__item swipe__item--adventures">
               <a href="#">Приключения</a>
             </li>
-            <li class="swipe__item">
+            <li class="swipe__item swipe__item--horrors">
               <a href="#">Ужасы</a>
             </li>
-            <li class="swipe__item">
+            <li class="swipe__item swipe__item--mystic">
               <a href="#">Мистика</a>
             </li>
-            <li class="swipe__item">
+            <li class="swipe__item swipe__item--detective">
               <a href="#">Детектив</a>
             </li>
-            <li class="swipe__item">
+            <li class="swipe__item swipe__item--science">
               <a href="#">Sci-fi</a>
             </li>
           </ul>
@@ -84,13 +85,13 @@
           <!-- Склеп -->
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
-              <div class="card__description">
-                <div class="card__budge card__budge--active">Хит</div>
+              <div class="card__description card__description--hit">
+                <div>Хит</div>
                 <h2>Склеп</h2>
                 <span>пр. Ленина, 37</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">2–5 чел</li>
-                  <li class="card__item card__item--puzzle">сложный</li>
+                <ul>
+                  <li>2–5 чел</li>
+                  <li>сложный</li>
                 </ul>
               </div>
               <picture>
@@ -104,13 +105,13 @@
           <!-- Маньяк -->
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
-              <div class="card__description">
+              <div class="card__description card__description--hit">
                 <div class="card__budge card__budge--active">Хит</div>
                 <h2>Маньяк</h2>
                 <span>Верхнетецкая, 32</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">3–6 чел</li>
-                  <li class="card__item card__item--puzzle">средний</li>
+                <ul>
+                  <li>3–6 чел</li>
+                  <li>средний</li>
                 </ul>
               </div>
               <picture>
@@ -125,12 +126,12 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description">
-                <div class="card__budge">Хит</div>
+                <div>Хит</div>
                 <h2>Ритуал</h2>
                 <span>пр. Ленина, 37</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">3–5 чел</li>
-                  <li class="card__item card__item--puzzle">сложный</li>
+                <ul>
+                  <li>3–5 чел</li>
+                  <li>сложный</li>
                 </ul>
               </div>
               <picture>
@@ -145,12 +146,12 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description">
-                <div class="card__budge">Хит</div>
+                <div>Хит</div>
                 <h2>История призраков</h2>
                 <span>Новослободская, 2а</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">5–6 чел</li>
-                  <li class="card__item card__item--puzzle">легкий</li>
+                <ul>
+                  <li>5–6 чел</li>
+                  <li>легкий</li>
                 </ul>
               </div>
               <picture>
@@ -165,12 +166,12 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description">
-                <div class="card__budge">Хит</div>
+                <div>Хит</div>
                 <h2>Тайны старого особняка</h2>
                 <span>пр. Ленина, 37</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">2–5 чел</li>
-                  <li class="card__item card__item--puzzle">легкий</li>
+                <ul>
+                  <li>2–5 чел</li>
+                  <li>легкий</li>
                 </ul>
               </div>
               <picture>
@@ -184,13 +185,13 @@
           <!-- Хижина в лесуХижина в лесу -->
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
-              <div class="card__description">
-                <div class="card__budge">Хит</div>
+              <div class="card__description card__description--hit">
+                <div>Хит</div>
                 <h2>Хижина в лесу</h2>
                 <span>Верхнетецкая, 32</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">4–7 чел</li>
-                  <li class="card__item card__item--puzzle">средний</li>
+                <ul>
+                  <li>4–7 чел</li>
+                  <li>средний</li>
                 </ul>
               </div>
               <picture>
@@ -205,12 +206,12 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description">
-                <div class="card__budge">Хит</div>
+                <div>Хит</div>
                 <h2>Фатальный эксперимент</h2>
                 <span>Верхнетецкая, 32</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">5–8 чел</li>
-                  <li class="card__item card__item--puzzle">сложный</li>
+                <ul>
+                  <li>5–8 чел</li>
+                  <li>сложный</li>
                 </ul>
               </div>
               <picture>
@@ -225,12 +226,12 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description">
-                <div class="card__budge">Хит</div>
+                <div>Хит</div>
                 <h2>Метро 2033</h2>
                 <span>Новослободская, 2а</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">6–8 чел</li>
-                  <li class="card__item card__item--puzzle">средний</li>
+                <ul>
+                  <li>6–8 чел</li>
+                  <li>средний</li>
                 </ul>
               </div>
               <picture>
@@ -245,12 +246,12 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description">
-                <div class="card__budge">Хит</div>
+                <div>Хит</div>
                 <h2>Старый чердак</h2>
                 <span>Новослободская, 2а</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">2–3 чел</li>
-                  <li class="card__item card__item--puzzle">легкий</li>
+                <ul>
+                  <li>2–3 чел</li>
+                  <li>легкий</li>
                 </ul>
               </div>
               <picture>
@@ -265,12 +266,12 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description">
-                <div class="card__budge">Хит</div>
+                <div>Хит</div>
                 <h2>Последний рубеж</h2>
                 <span>Верхнетецкая, 32</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">4–7 чел</li>
-                  <li class="card__item card__item--puzzle">средний</li>
+                <ul>
+                  <li>4–7 чел</li>
+                  <li>средний</li>
                 </ul>
               </div>
               <picture>
@@ -285,12 +286,12 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description">
-                <div class="card__budge">Хит</div>
+                <div>Хит</div>
                 <h2>Марс-2056</h2>
                 <span>пр. Ленина, 37</span>
-                <ul class="card__list">
-                  <li class="card__item card__item--person">2–4 чел</li>
-                  <li class="card__item card__item--puzzle">легкий</li>
+                <ul>
+                  <li>2–4 чел</li>
+                  <li>легкий</li>
                 </ul>
               </div>
               <picture>
@@ -364,26 +365,26 @@
     </h2>
     <form class="form form--feedback" action="https://echo.htmlacademy.ru" method="GET">
 
-      <ul class="inputfeelds inputfeelds--feedback">
-        <li class="inputfeelds__item inputfeelds__item--feedback">
+      <ul class="inputfields inputfields--feedback">
+        <li class="inputfields__item inputfields__item--feedback">
           <label for="user-name">
             Чтобы мы смогли обращаться к вам, оставьте ваше имя
           </label>
-          <div class="inputfeelds__input-wrapper">
+          <div class="inputfields__input-wrapper">
             <input type="text" id="user-name" name="name" placeholder="Имя" required="">
             <span></span>
           </div>
         </li>
-        <li class="inputfeelds__item inputfeelds__item--feedback">
+        <li class="inputfields__item inputfields__item--feedback">
           <label for="user-email">
             Чтобы вы получили ответ, оставьте ваш e-mail
           </label>
-          <div class="inputfeelds__input-wrapper">
+          <div class="inputfields__input-wrapper">
             <input type="email" id="user-email" name="email" placeholder="Email" required="">
             <span></span>
           </div>
         </li>
-        <li class="inputfeelds__item inputfeelds__item--feedback">
+        <li class="inputfields__item inputfields__item--feedback">
           <label for="user-textarea">
             Ваш вопрос:
           </label>
@@ -391,8 +392,8 @@
         </li>
       </ul>
 
-      <div class="inputfeelds inputfeelds--contract">
-        <div class="inputfeelds__item inputfeelds__item--contract">
+      <div class="inputfields inputfields--contract">
+        <div class="inputfields__item inputfields__item--contract">
           <input type="checkbox" id="rules" name="rules" required="" tabindex="0">
           <label for="rules">Я согласен с</label>
           <a href="#">правилами обработки персональных данных</a>

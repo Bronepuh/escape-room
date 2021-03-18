@@ -46,33 +46,6 @@
   }
 }
 
-.navigation__item a {
-  display: flex;
-  flex-wrap: wrap;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.03em;
-  font-feature-settings: "pnum"on, "lnum"on;
-  color: $basic-white;
-  text-decoration: none;
-
-  @media (max-width: $tablet-width) {
-    font-size: 16px;
-    line-height: 19px;
-  }
-
-  &:hover,
-  &:focus {
-    color: $basic-hover;
-  }
-
-  &:active {
-    opacity: 0.8;
-  }
-}
-
 .navigation__item--active a {
   color: $basic-hover;
 }

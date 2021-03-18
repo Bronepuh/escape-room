@@ -18,9 +18,9 @@ var del = require("del");
 var concat = require('gulp-concat');
 
 gulp.task('concat', function() {
-  return gulp.src(['source/lib/header-toggle.js', 'source/lib/location-popup.js', 'source/lib/feadback-popup.js','source/lib/calendar.js'])
+  return gulp.src(['source/js/header-toggle.js', 'source/js/location-popup.js', 'source/js/feedback-popup.js','source/js/calendar.js'])
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('source/js/'));
+    .pipe(gulp.dest('build/js/'));
 });
 
 gulp.task("css", function () {
@@ -51,7 +51,7 @@ gulp.task("server", function () {
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
-  gulp.watch("source/lib/**/*.js", gulp.series("concat", "js","refresh"));
+  gulp.watch(['source/js/header-toggle.js', 'source/js/location-popup.js', 'source/js/feedback-popup.js','source/js/calendar.js'], gulp.series("concat", "js","refresh"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
 });
@@ -98,7 +98,7 @@ gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    "source/js/**",
+    "source/js/vendor.js",
     "source//*.ico"
     ], {
       base: "source"

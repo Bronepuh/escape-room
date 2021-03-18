@@ -47,157 +47,163 @@
   @media (max-width: $tablet-width) {
     padding-bottom: 14px;
   }
-}
 
-.card__budge {
-  position: absolute;
-  top: 15px;
-  right: 19px;
-  display: none;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 67px;
-  height: 27px;
-  padding-top: 2px;
-  padding-left: 17px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 17px;
-  align-items: center;
-  font-feature-settings: "pnum"on, "lnum"on;
-  color: $text-white;
-  border: 2px solid $basic-hover;
-  border-radius: 25px;
-
-  @media (max-width: $tablet-width) {
-    top: 21px;
-    right: 14px;
-  }
-
-  &::before {
+  div {
     position: absolute;
-    content: "";
-    top: 3px;
-    left: 12px;
-    width: 16px;
-    height: 16px;
-    background-image: url("/img/icon-star.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  &--active {
-    display: flex;
-  }
-}
-
-.card__description h2 {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin: 0;
-  margin-bottom: 10px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-  align-items: flex-end;
-  font-feature-settings: "pnum"on, "lnum"on;
-  color: $basic-white;
-}
-
-.card span {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 7px;
-  padding-left: 20px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 19px;
-  align-items: center;
-  font-feature-settings: "pnum"on, "lnum"on;
-  color: $text-white;
-  opacity: 0.8;
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 2px;
-    left: 2px;
-    width: 11px;
-    height: 14px;
-    background-image: url("/img/icon-pipka.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-}
-
-.card__list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.card__item {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-right: 10px;
-  padding-left: 22px;
-  padding-right: 12px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 19px;
-  font-feature-settings: "pnum"on, "lnum"on;
-  color: $text-white;
-  opacity: 0.8;
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    width: 1px;
-    height: 100%;
-    background-color: $basic-white;
-  }
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 2px;
-    width: 13px;
-    height: 16px;
-    background-image: url("/img/icon-person.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  &:last-child::after {
+    top: 15px;
+    right: 19px;
     display: none;
-  }
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 67px;
+    height: 27px;
+    padding-top: 2px;
+    padding-left: 17px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    align-items: center;
+    font-feature-settings: "pnum"on, "lnum"on;
+    color: $text-white;
+    border: 2px solid $basic-hover;
+    border-radius: 25px;
 
-  &--person {
+    @media (max-width: $tablet-width) {
+      top: 21px;
+      right: 14px;
+    }
+
     &::before {
-      background-image: url("/img/icon-person.svg");
+      position: absolute;
+      content: "";
+      top: 3px;
+      left: 12px;
+      width: 16px;
+      height: 16px;
+      background-image: url("../img/icon-star.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &--active {
+      display: flex;
     }
   }
 
-  &--puzzle {
+  h2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    align-items: flex-end;
+    font-feature-settings: "pnum"on, "lnum"on;
+    color: $basic-white;
+  }
+
+  span {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 7px;
+    padding-left: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    align-items: center;
+    font-feature-settings: "pnum"on, "lnum"on;
+    color: $text-white;
+    opacity: 0.8;
+
     &::before {
-      left: 0;
-      width: 16px;
+      position: absolute;
+      content: "";
+      top: 2px;
+      left: 2px;
+      width: 11px;
+      height: 14px;
+      background-image: url("../img/icon-pipka.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 10px;
+    padding-left: 22px;
+    padding-right: 12px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    font-feature-settings: "pnum"on, "lnum"on;
+    color: $text-white;
+    opacity: 0.8;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background-color: $basic-white;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 2px;
+      width: 13px;
       height: 16px;
-      background-image: url("/img/icon-puzzle.svg");
+      background-image: url("../img/icon-person.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    &:first-child {
+      &::before {
+        background-image: url("../img/icon-person.svg");
+      }
+    }
+
+    &:last-child {
+      &::before {
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background-image: url("../img/icon-puzzle.svg");
+      }
+    }
+  }
+
+  &--hit {
+    div {
+      display: flex;
     }
   }
 }

@@ -46,13 +46,13 @@
           right: 2px;
           width: 16px;
           height: 16px;
-          background-image: url("/img/icon-close.svg");
+          background-image: url("../img/icon-close.svg");
         }
 
         &:hover,
         &:focus {
           &::after {
-            background-image: url("/img/icon-close-hover.svg");
+            background-image: url("../img/icon-close-hover.svg");
           }
         }
       }
@@ -149,7 +149,7 @@
       right: 1px;
       width: 20px;
       height: 16px;
-      background-image: url("/img/icon-burger.svg");
+      background-image: url("../img/icon-burger.svg");
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -161,7 +161,7 @@
       color: $basic-hover;
 
       &::after {
-        background-image: url("/img/icon-burger-hover.svg");
+        background-image: url("../img/icon-burger-hover.svg");
       }
     }
 

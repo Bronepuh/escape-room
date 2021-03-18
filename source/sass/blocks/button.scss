@@ -6,7 +6,7 @@
   width: 185px;
   height: 47px;
   border-radius: 47.32px;
-  background-color: $darck-orange;
+  background-color: $dark-orange;
   font-weight: 800;
   font-size: 14px;
   line-height: 16px;
@@ -85,7 +85,7 @@
       right: 15px;
       width: 5px;
       height: 7px;
-      background-image: url("/img/icon-arrow-right-small.svg");
+      background-image: url("../img/icon-arrow-right-small.svg");
     }
 
     &::after {

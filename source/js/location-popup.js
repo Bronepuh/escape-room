@@ -1,3 +1,4 @@
+'use strict';
 (function () {
   var pageBody = document.querySelector('.page-body');
   var overlay = document.querySelector('.overlay');
@@ -39,6 +40,4 @@
       locationPopupOpenClickHandler();
     });
   }
-
-
 })();
