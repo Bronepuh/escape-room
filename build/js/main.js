@@ -15,7 +15,7 @@
   }
 
   if (pageHeader && pageBody) {
-    var headerToggleEscPress = function (evt) {
+    var headerToggleEscHandler = function (evt) {
       if (evt.key === 'Escape') {
         closeMenu();
       }
@@ -27,7 +27,7 @@
       pageFooter.classList.add('page-footer--visible');
       pageFooter.classList.add('page-footer--absolute');
       pageMain.classList.add('visually-hidden');
-      document.addEventListener('keydown', headerToggleEscPress);
+      document.addEventListener('keydown', headerToggleEscHandler);
     };
 
     var closeMenu = function () {
@@ -36,7 +36,7 @@
       pageFooter.classList.remove('page-footer--visible');
       pageFooter.classList.remove('page-footer--absolute');
       pageMain.classList.remove('visually-hidden');
-      document.removeEventListener('keydown', headerToggleEscPress);
+      document.removeEventListener('keydown', headerToggleEscHandler);
     };
 
     var headerToggleClickHandler = function () {
@@ -68,36 +68,40 @@
   var locationPopupClose = document.querySelector('.popup--location .popup__close');
 
   if (locationPopupOpen) {
-    var locationPopupEscPress = function (evt) {
+    var locationPopupEscHandler = function (evt) {
       if (evt.key === 'Escape') {
-        locationPopupCloseClickHandler();
+        closePopup();
       }
     };
 
-    var locationPopupOpenClickHandler = function () {
+    var openPopup = function () {
       pageBody.classList.add('page-body--popup');
       locationPopup.classList.remove('popup--hidden');
       locationPopupClose.addEventListener('click', function () {
-        locationPopupCloseClickHandler();
+        closePopup();
       });
-      document.addEventListener('keydown', locationPopupEscPress);
-      overlay.addEventListener('click', locationPopupCloseClickHandler);
+      document.addEventListener('keydown', locationPopupEscHandler);
+      overlay.addEventListener('click', function () {
+        closePopup();
+      });
       locationPopupFirstItem.focus();
     };
 
-    var locationPopupCloseClickHandler = function () {
+    var closePopup = function () {
       pageBody.classList.remove('page-body--popup');
       locationPopup.classList.add('popup--hidden');
-      document.removeEventListener('keydown', locationPopupEscPress);
+      document.removeEventListener('keydown', locationPopupEscHandler);
       locationPopupClose.removeEventListener('click', function () {
-        locationPopupCloseClickHandler();
+        closePopup();
       });
-      overlay.removeEventListener('click', locationPopupCloseClickHandler);
+      overlay.removeEventListener('click', function () {
+        closePopup();
+      });
     };
 
     locationPopupOpen.addEventListener('click', function (evt) {
       evt.preventDefault();
-      locationPopupOpenClickHandler();
+      openPopup();
     });
   }
 })();
@@ -106,10 +110,10 @@
 (function () {
   var pageBody = document.querySelector('.page-body');
   var feedbackForm = document.querySelector('.form--feedback');
-  var inputWrappers = document.querySelectorAll('.inputfields__input-wrapper');
+  var inputWrappers = document.querySelectorAll('.input-fields__input-wrapper');
   var userNameInput = document.querySelector('#user-name');
   var userEmailInput = document.querySelector('#user-email');
-  var inputMsgs = document.querySelectorAll('.inputfields__item--feedback span');
+  var inputMsgs = document.querySelectorAll('.input-fields__item--feedback span');
   var overlay = document.querySelector('.overlay');
   var feedbackPopupOpen = document.querySelector('.page-footer__question');
   var feedbackPopupClose = document.querySelector('.popup--feedback .popup__close');
@@ -128,41 +132,49 @@
     };
 
     var clearInputClasses = function (el) {
-      el.classList.remove('inputfields__input-wrapper--success');
-      el.classList.remove('inputfields__input-wrapper--error');
+      el.classList.remove('input-fields__input-wrapper--success');
+      el.classList.remove('input-fields__input-wrapper--error');
     };
 
     var feedbackPopupEscPress = function (evt) {
       if (evt.key === 'Escape') {
-        feedbackPopupCloseClickHandler();
+        closePopup();
       }
     };
 
-    var feedbackPopupOpenClickHandler = function () {
+    var openPopup = function () {
       clearInputs();
       clearInputClasses(inputWrappers[0]);
       clearInputClasses(inputWrappers[1]);
       feedbackSubmitButton.disabled = true;
       pageBody.classList.add('page-body--popup');
       feedbackPopup.classList.remove('popup--hidden');
-      feedbackPopupClose.addEventListener('click', feedbackPopupCloseClickHandler);
+      feedbackPopupClose.addEventListener('click', function () {
+        closePopup();
+      });
       feedbackPopup.querySelector('.popup__close').focus();
       document.addEventListener('keydown', feedbackPopupEscPress);
-      overlay.addEventListener('click', feedbackPopupCloseClickHandler);
+      overlay.addEventListener('click', function () {
+        closePopup();
+      });
       userNameInput.focus();
     };
 
-    var feedbackPopupCloseClickHandler = function () {
+    var closePopup = function () {
       pageBody.classList.remove('page-body--popup');
       feedbackPopup.classList.add('popup--hidden');
       document.removeEventListener('keydown', feedbackPopupEscPress);
-      feedbackPopupClose.removeEventListener('click', feedbackPopupCloseClickHandler);
-      overlay.removeEventListener('click', feedbackPopupCloseClickHandler);
+      feedbackPopupClose.removeEventListener('click', function () {
+        closePopup();
+      });
+      overlay.removeEventListener('click', function () {
+        closePopup();
+      });
     };
 
     feedbackPopupOpen.addEventListener('click', function (evt) {
       evt.preventDefault();
-      feedbackPopupOpenClickHandler();
+      openPopup();
     });
   }
 
@@ -173,14 +185,14 @@
     var showNameError = function () {
       userNameInput.setCustomValidity('');
       clearInputClasses(inputWrappers[0]);
-      inputWrappers[0].classList.add('inputfields__input-wrapper--error');
+      inputWrappers[0].classList.add('input-fields__input-wrapper--error');
       submitName = false;
     };
 
     var showNameSuccess = function () {
       userNameInput.setCustomValidity('');
       clearInputClasses(inputWrappers[0]);
-      inputWrappers[0].classList.add('inputfields__input-wrapper--success');
+      inputWrappers[0].classList.add('input-fields__input-wrapper--success');
       inputMsgs[0].textContent = '';
       submitName = true;
     };
@@ -229,7 +241,6 @@
       var inputNameValue = userNameInput.value;
       var inputNameArr = inputNameValue.split(' ');
       checkValidationName(inputNameArr);
-
       feedbackSubmitButton.disabled = !(submitName && submitEmail);
     };
 
@@ -238,30 +249,29 @@
       userEmailInput.setCustomValidity('');
       inputMsgs[1].textContent = 'Введён некорректный e-mail, попробуйте заново';
       clearInputClasses(inputWrappers[1]);
-      inputWrappers[1].classList.add('inputfields__input-wrapper--error');
+      inputWrappers[1].classList.add('input-fields__input-wrapper--error');
     };
 
     var showEmailSuccess = function () {
       userEmailInput.setCustomValidity('');
       clearInputClasses(inputWrappers[1]);
-      inputWrappers[1].classList.add('inputfields__input-wrapper--success');
+      inputWrappers[1].classList.add('input-fields__input-wrapper--success');
       inputMsgs[1].textContent = '';
+    };
+
+    var checkValidationEmail = function (arrEmail) {
+
+      submitEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(arrEmail);
+
+      if (submitEmail) {
+        showEmailSuccess();
+      } else {
+        showEmailError();
+      }
     };
 
     var userEmailInputHandler = function () {
       var inputEmailValue = userEmailInput.value;
-
-      var checkValidationEmail = function (arrEmail) {
-
-        submitEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(arrEmail);
-
-        if (submitEmail) {
-          showEmailSuccess();
-        } else {
-          showEmailError();
-        }
-      };
-
       checkValidationEmail(inputEmailValue);
       feedbackSubmitButton.disabled = !(submitName && submitEmail);
     };

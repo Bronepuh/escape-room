@@ -14,52 +14,57 @@
 .location__detected {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
-  padding-left: 34px;
-  margin-bottom: 44px;
-  text-decoration: none;
-  color: $text-white;
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 2px;
-    width: 24px;
-    height: 24px;
-    background-image: url("../img/icon-gps-location.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
+  a {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 44px;
+    text-decoration: none;
+    color: $text-white;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 2px;
+      width: 24px;
+      height: 24px;
+      background-image: url("../img/icon-gps-location.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 32px;
+      width: 87%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
-  &::after {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 32px;
-    width: 87%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.5);
+  span {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 18px;
   }
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:focus {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-}
-
-.location__detected-2 {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-bottom: 18px;
 }
 
 .location__list {
@@ -81,34 +86,37 @@
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 20px;
+
+  a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: auto;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.32);
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    font-feature-settings: "pnum"on, "lnum"on;
+    cursor: pointer;
+
+    &:hover {
+      color: $basic-white;
+    }
+
+    &:focus {
+      color: $basic-white;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
 }
 
-.location__link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: auto;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.32);
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-  font-feature-settings: "pnum"on, "lnum"on;
-
-  &:hover {
-    color: $basic-white;
-  }
-
-  &:focus {
-    color: $basic-white;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
-
-  &--active {
+.location__item--active {
+  a {
     color: $basic-white;
 
     &::after {

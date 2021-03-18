@@ -13,32 +13,30 @@
 <body class="page-body page-body--nojs">
 
   <!-- feedback-popap -->
-  <div class="popup popup--feedback">
-    <h2 class="popup__title">
-      Задайте вопрос
-    </h2>
+  <div class="popup popup--feedback popup--hidden">
+    <h2>Задайте вопрос</h2>
     <form class="form form--feedback" action="https://echo.htmlacademy.ru" method="GET">
 
-      <ul class="inputfields inputfields--feedback">
-        <li class="inputfields__item inputfields__item--feedback">
+      <ul class="input-fields input-fields--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-name">
             Чтобы мы смогли обращаться к вам, оставьте ваше имя
           </label>
-          <div class="inputfields__input-wrapper">
+          <div class="input-fields__input-wrapper">
             <input type="text" id="user-name" name="name" placeholder="Имя" required="">
             <span></span>
           </div>
         </li>
-        <li class="inputfields__item inputfields__item--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-email">
             Чтобы вы получили ответ, оставьте ваш e-mail
           </label>
-          <div class="inputfields__input-wrapper">
+          <div class="input-fields__input-wrapper">
             <input type="email" id="user-email" name="email" placeholder="Email" required="">
             <span></span>
           </div>
         </li>
-        <li class="inputfields__item inputfields__item--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-textarea">
             Ваш вопрос:
           </label>
@@ -46,8 +44,8 @@
         </li>
       </ul>
 
-      <div class="inputfields inputfields--contract">
-        <div class="inputfields__item inputfields__item--contract">
+      <div class="input-fields input-fields--contract">
+        <div class="input-fields__item input-fields__item--contract">
           <input type="checkbox" id="rules" name="rules" required="" tabindex="0">
           <label for="rules">Я согласен с</label>
           <a href="#">правилами обработки персональных данных</a>

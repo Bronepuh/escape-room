@@ -13,33 +13,30 @@
 <body class="page-body page-body--nojs">
 
   <!-- location-popup -->
-  <div class="popup popup--location">
+  <div class="popup popup--location popup--hidden">
     <div class="popup__body">
-      <h2 class="popup__title">
-        Ваш город:
-      </h2>
+      <h2>Ваш город:</h2>
       <div class="popup__location location">
-        <a class="location__detected" href="#">
-          Определить местоположение
-        </a>
-        <span class="location__detected-2">
-          ... или выберите вручную
-        </span>
+        <div class="location__detected">
+          <a href="#">Определить местоположение</a>
+          <span>... или выберите вручную</span>
+        </div>
+
         <ul class="location__list">
-          <li class="location__item">
-            <a href="#" class="location__link location__link--active">Новосибирск</a>
+          <li class="location__item location__item--active">
+            <a href="#">Новосибирск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Иркутск</a>
+            <a>Иркутск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Смоленск</a>
+            <a>Смоленск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Волгоград</a>
+            <a>Волгоград</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Комсомольск-на-Амуре</a>
+            <a>Комсомольск-на-Амуре</a>
           </li>
         </ul>
         <button class="popup__close" type="button" aria-label="закрыть попап"></button>

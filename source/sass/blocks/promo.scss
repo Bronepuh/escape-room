@@ -35,40 +35,68 @@
   @media (max-width: 600px) {
     width: 100%;
   }
+
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 43px;
+    padding-left: 30px;
+    padding-right: 125px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 150%;
+    font-feature-settings: "pnum"on, "lnum"on;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 30px;
+      padding-left: 5px;
+      padding-right: 5px;
+      letter-spacing: -0.2px;
+    }
+  }
 }
 
-.promo span {
-  display: flex;
-  width: 100%;
-  margin-bottom: 10px;
-  padding-left: 5px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 144%;
-  color: $basic-hover;
-}
-
-.promo h2 {
+.promo__description {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   width: 100%;
-  margin: 0;
-  margin-bottom: 28px;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 92px;
-  line-height: 95%;
-  letter-spacing: -0.03em;
-  color: $basic-white;
 
-  @media (max-width: $tablet-width) {
-    margin-bottom: 20px;
-    font-size: 42px;
-    line-height: 110%;
-    letter-spacing: 0.5px;
+  span {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
     padding-left: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 144%;
+    color: $basic-hover;
+  }
+
+  h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 28px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 92px;
+    line-height: 95%;
+    letter-spacing: -0.03em;
+    color: $basic-white;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 20px;
+      font-size: 42px;
+      line-height: 110%;
+      letter-spacing: 0.5px;
+      padding-left: 5px;
+    }
   }
 }
 
@@ -198,34 +226,6 @@
   }
 }
 
-.promo__description {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 0;
-  margin-bottom: 43px;
-  padding-left: 30px;
-  padding-right: 125px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 150%;
-  font-feature-settings: "pnum"on, "lnum"on;
-
-  @media (max-width: $tablet-width) {
-    margin-bottom: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
-    letter-spacing: -0.2px;
-  }
-}
-
-.promo__description br {
-  @media (max-width: $tablet-width) {
-    display: none;
-  }
-}
-
 .promo__button {
   display: flex;
   flex-wrap: wrap;
@@ -260,7 +260,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("../img/promo-radial-bg.webp");
+      background-image: url("../img/promo-radial-bg.png");
       background-repeat: no-repeat;
       background-size: cover;
       z-index: -1;

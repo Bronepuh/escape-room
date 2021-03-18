@@ -27,6 +27,17 @@
     padding-right: 22px;
   }
 
+  h2 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 24px;
+    font-weight: 800;
+    font-size: 32px;
+    font-feature-settings: "pnum"on, "lnum"on;
+    color: $basic-white;
+  }
+
   &--hidden {
     display: none;
   }
@@ -45,17 +56,6 @@
       padding-right: 22px;
     }
   }
-}
-
-.popup__title {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  margin-bottom: 24px;
-  font-weight: 800;
-  font-size: 32px;
-  font-feature-settings: "pnum"on, "lnum"on;
-  color: $basic-white;
 }
 
 .popup__close {

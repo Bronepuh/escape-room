@@ -57,8 +57,8 @@
 
     <section class="page-form form">
 
-      <div class="form__title-container">
-        <a class="link link--form" href="promo.html">ОПИСАНИЕ</a>
+      <div class="form__title-container link link--form">
+        <a href="promo.html">ОПИСАНИЕ</a>
         <span>выбранный квест</span>
         <span>хоррор, триллер</span>
         <h2>МАНЬЯК</h2>
@@ -72,74 +72,82 @@
       </div>
 
       <form class="form__body" action="https://echo.htmlacademy.ru" method="GET">
-        <div class="form__date date" data-pmu-format="Y-m-d" tabindex="0">Выберите дату</div>
+        <div class="form__date date" data-pmu-format="Y-m-d" tabindex="0">
+          <span>Выберите дату</span>
+        </div>
         <div class="form__calendar"></div>
         <input type="hidden" name="date" id="date">
 
         <div class="form__time">
           <ul class="form__samples">
-            <li class="form__sample">— свободно</li>
-            <li class="form__sample">— занято</li>
-            <li class="form__sample">— выбрано вами</li>
+            <li class="form__sample">
+              <span>— свободно</span>
+            </li>
+            <li class="form__sample">
+              <span>— занято</span>
+            </li>
+            <li class="form__sample">
+              <span>— выбрано вами</span>
+            </li>
           </ul>
 
-          <ul class="inputfields inputfields--radio">
-            <li class="inputfields__item inputfields__item--radio">
+          <ul class="input-fields input-fields--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-1" name="time" value="09:45">
               <label for="time-1">09:45</label>
               <span>1400p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-2" name="time" value="11:00">
               <label for="time-2">11:00</label>
               <span>1400p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-3" name="time" value="12:15" disabled="">
               <label for="time-3">12:15</label>
               <span>1400p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-4" name="time" value="13:30" disabled="">
               <label for="time-4">13:30</label>
               <span>1400p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-5" name="time" value="14:45">
               <label for="time-5">14:45</label>
               <span>1400p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-6" name="time" value="16:00">
               <label for="time-6">16:00</label>
-              <span class="form__radio-subtitle">1500p</span>
+              <span>1500p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-7" name="time" value="17:15" disabled="">
               <label for="time-7">17:15</label>
-              <span class="form__radio-subtitle">1500p</span>
+              <span>1500p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-8" name="time" value="18:30">
               <label for="time-8">18:30</label>
               <span>1500p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-9" name="time" value="19:45">
               <label for="time-9">19:45</label>
               <span>1500p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-10" name="time" value="21:00">
               <label for="time-10">21:00</label>
-              <span class="form__radio-subtitle">1800p</span>
+              <span>1800p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-11" name="time" value="22:15" disabled="">
               <label for="time-11">22:15</label>
               <span>1800p</span>
             </li>
-            <li class="inputfields__item inputfields__item--radio">
+            <li class="input-fields__item input-fields__item--radio">
               <input type="radio" id="time-12" name="time" value="23:30" disabled="">
               <label for="time-12">23:30</label>
               <span>2000p</span>
@@ -174,31 +182,28 @@
   <!-- location-popup -->
   <div class="popup popup--location popup--hidden">
     <div class="popup__body">
-      <h2 class="popup__title">
-        Ваш город:
-      </h2>
+      <h2>Ваш город:</h2>
       <div class="popup__location location">
-        <a class="location__detected" href="#">
-          Определить местоположение
-        </a>
-        <span class="location__detected-2">
-          ... или выберите вручную
-        </span>
+        <div class="location__detected">
+          <a href="#">Определить местоположение</a>
+          <span>... или выберите вручную</span>
+        </div>
+
         <ul class="location__list">
-          <li class="location__item">
-            <a href="#" class="location__link location__link--active">Новосибирск</a>
+          <li class="location__item location__item--active">
+            <a href="#">Новосибирск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Иркутск</a>
+            <a>Иркутск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Смоленск</a>
+            <a>Смоленск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Волгоград</a>
+            <a>Волгоград</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Комсомольск-на-Амуре</a>
+            <a>Комсомольск-на-Амуре</a>
           </li>
         </ul>
         <button class="popup__close" type="button" aria-label="закрыть попап"></button>
@@ -208,31 +213,29 @@
 
   <!-- feedback-popap -->
   <div class="popup popup--feedback popup--hidden">
-    <h2 class="popup__title">
-      Задайте вопрос
-    </h2>
+    <h2>Задайте вопрос</h2>
     <form class="form form--feedback" action="https://echo.htmlacademy.ru" method="GET">
 
-      <ul class="inputfields inputfields--feedback">
-        <li class="inputfields__item inputfields__item--feedback">
+      <ul class="input-fields input-fields--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-name">
             Чтобы мы смогли обращаться к вам, оставьте ваше имя
           </label>
-          <div class="inputfields__input-wrapper">
+          <div class="input-fields__input-wrapper">
             <input type="text" id="user-name" name="name" placeholder="Имя" required="">
             <span></span>
           </div>
         </li>
-        <li class="inputfields__item inputfields__item--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-email">
             Чтобы вы получили ответ, оставьте ваш e-mail
           </label>
-          <div class="inputfields__input-wrapper">
+          <div class="input-fields__input-wrapper">
             <input type="email" id="user-email" name="email" placeholder="Email" required="">
             <span></span>
           </div>
         </li>
-        <li class="inputfields__item inputfields__item--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-textarea">
             Ваш вопрос:
           </label>
@@ -240,8 +243,8 @@
         </li>
       </ul>
 
-      <div class="inputfields inputfields--contract">
-        <div class="inputfields__item inputfields__item--contract">
+      <div class="input-fields input-fields--contract">
+        <div class="input-fields__item input-fields__item--contract">
           <input type="checkbox" id="rules" name="rules" required="" tabindex="0">
           <label for="rules">Я согласен с</label>
           <a href="#">правилами обработки персональных данных</a>

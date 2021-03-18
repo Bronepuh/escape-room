@@ -57,8 +57,8 @@
 
     <section class="page-main__choice choice">
       <div class="choice__container">
-        <span class="choice__subtitle">квесты в Новосибирске</span>
-        <h2 class="choice__title">Выберите тематику</h2>
+        <span>квесты в Новосибирске</span>
+        <h2>Выберите тематику</h2>
         <div class="choice__swipe swipe">
           <ul class="swipe__list">
             <li class="swipe__item swipe__item--quests swipe__item--active">
@@ -106,7 +106,7 @@
           <li class="choice__item">
             <a href="promo.html" class="choice__card card">
               <div class="card__description card__description--hit">
-                <div class="card__budge card__budge--active">Хит</div>
+                <div>Хит</div>
                 <h2>Маньяк</h2>
                 <span>Верхнетецкая, 32</span>
                 <ul>
@@ -326,31 +326,28 @@
   <!-- location-popup -->
   <div class="popup popup--location popup--hidden">
     <div class="popup__body">
-      <h2 class="popup__title">
-        Ваш город:
-      </h2>
+      <h2>Ваш город:</h2>
       <div class="popup__location location">
-        <a class="location__detected" href="#">
-          Определить местоположение
-        </a>
-        <span class="location__detected-2">
-          ... или выберите вручную
-        </span>
+        <div class="location__detected">
+          <a href="#">Определить местоположение</a>
+          <span>... или выберите вручную</span>
+        </div>
+
         <ul class="location__list">
-          <li class="location__item">
-            <a href="#" class="location__link location__link--active">Новосибирск</a>
+          <li class="location__item location__item--active">
+            <a href="#">Новосибирск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Иркутск</a>
+            <a>Иркутск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Смоленск</a>
+            <a>Смоленск</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Волгоград</a>
+            <a>Волгоград</a>
           </li>
           <li class="location__item">
-            <a href="#" class="location__link">Комсомольск-на-Амуре</a>
+            <a>Комсомольск-на-Амуре</a>
           </li>
         </ul>
         <button class="popup__close" type="button" aria-label="закрыть попап"></button>
@@ -360,31 +357,29 @@
 
   <!-- feedback-popap -->
   <div class="popup popup--feedback popup--hidden">
-    <h2 class="popup__title">
-      Задайте вопрос
-    </h2>
+    <h2>Задайте вопрос</h2>
     <form class="form form--feedback" action="https://echo.htmlacademy.ru" method="GET">
 
-      <ul class="inputfields inputfields--feedback">
-        <li class="inputfields__item inputfields__item--feedback">
+      <ul class="input-fields input-fields--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-name">
             Чтобы мы смогли обращаться к вам, оставьте ваше имя
           </label>
-          <div class="inputfields__input-wrapper">
+          <div class="input-fields__input-wrapper">
             <input type="text" id="user-name" name="name" placeholder="Имя" required>
             <span></span>
           </div>
         </li>
-        <li class="inputfields__item inputfields__item--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-email">
             Чтобы вы получили ответ, оставьте ваш e-mail
           </label>
-          <div class="inputfields__input-wrapper">
+          <div class="input-fields__input-wrapper">
             <input type="email" id="user-email" name="email" placeholder="Email" required>
             <span></span>
           </div>
         </li>
-        <li class="inputfields__item inputfields__item--feedback">
+        <li class="input-fields__item input-fields__item--feedback">
           <label for="user-textarea">
             Ваш вопрос:
           </label>
@@ -393,8 +388,8 @@
         </li>
       </ul>
 
-      <div class="inputfields inputfields--contract">
-        <div class="inputfields__item inputfields__item--contract">
+      <div class="input-fields input-fields--contract">
+        <div class="input-fields__item input-fields__item--contract">
           <input type="checkbox" id="rules" name="rules" required tabindex="0">
           <label for="rules">Я согласен с</label>
           <a href="#">правилами обработки персональных данных</a>

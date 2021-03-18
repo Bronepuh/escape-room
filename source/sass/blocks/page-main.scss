@@ -3,17 +3,25 @@
   flex-wrap: wrap;
   width: 100%;
   background-color: $basic-bg;
-  background-image: url("../img/bg-desktop@1x.webp");
+  background-image: url("../img/bg-desktop@1x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   z-index: 0;
 
   @media (max-width: $tablet-width) {
-    background-image: url("../img/bg-mobile@1x.webp");
+    background-image: url("../img/bg-mobile@1x.jpg");
 
     &::after {
+      position: fixed;
+      content: "";
+      left: 0;
+      width: 100%;
+      height: 100%;
       background-image: url("../img/bg-mobile-radial@1x.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 0;
     }
   }
 
@@ -27,7 +35,7 @@
   }
 
   &--promo {
-    background-image: url("../img/maniac-desktop-bg@1x.webp");
+    background-image: url("../img/maniac-desktop-bg@1x.jpg");
 
     &::after {
       position: absolute;
@@ -36,14 +44,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("../img/promo-radial-bg.webp");
+      background-image: url("../img/promo-radial-bg.png");
       background-repeat: no-repeat;
       background-size: cover;
       z-index: -1;
     }
 
     @media (max-width: $tablet-width) {
-      background-image: url("../img/maniac-mobile-bg@1x.webp");
+      background-image: url("../img/maniac-mobile-bg@1x.jpg");
       background-position: top;
       background-size: 100% auto;
       background-color: $basic-bg-2;
@@ -57,7 +65,7 @@
   &--form {
     width: 100%;
     height: 100%;
-    background-image: url("../img/form-bg-desktop.webp");
+    background-image: url("../img/form-bg-desktop.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: left;
@@ -79,7 +87,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("../img/form-bg-desktop-radial.webp");
+      background-image: url("../img/form-bg-desktop-radial.png");
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: left;
