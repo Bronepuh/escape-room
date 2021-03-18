@@ -6,7 +6,7 @@
   var buySubmitButton = document.querySelector('.button--buy');
   var priceInput = document.querySelector('#price');
   var priceResult = document.querySelector('.result__price');
-  var formRadioItems = document.querySelectorAll('.inputfields__item--radio');
+  var formRadioItems = document.querySelectorAll('.input-fields__item--radio');
   var calendar = document.querySelector('.date');
   var form = document.querySelector('.page-form.form');
   var monthNumberToName = {
